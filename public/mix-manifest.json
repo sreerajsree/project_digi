@@ -1,9 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
+    "/js/sticky-kit_users.js": "/js/sticky-kit_users.js",
     "/js/lazyload_users.js": "/js/lazyload_users.js",
     "/js/slick_users.js": "/js/slick_users.js",
-    "/js/sticky-kit_users.js": "/js/sticky-kit_users.js",
+    "/css/app.css": "/css/app.css",
     "/js/jquery.min.js": "/js/jquery.min.js",
     "/js/sticky-kit.min.js": "/js/sticky-kit.min.js",
     "/js/slick.min.js": "/js/slick.min.js"

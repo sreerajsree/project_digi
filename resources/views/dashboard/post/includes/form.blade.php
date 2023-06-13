@@ -9,8 +9,8 @@
     <div class="form-error">{{ $errors->first('description') }}</div>
 </div>
 <div class="form-wrapper">
-    <label for="body">Body</label>
-    <textarea name="body">{{ old('body') ?? $post->body }}</textarea>
+    <label for="description">Body</label>
+    <textarea name="body" id="mytextarea">{{ old('body') ?? $post->body }}</textarea>
     <div class="form-error">{{ $errors->first('body') }}</div>
 </div>
 <div class="form-wrapper">

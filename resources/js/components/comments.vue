@@ -1,5 +1,5 @@
 <template>
-  <div class="comments">        
+  <div class="comments">
     <div v-if="auth" class="comments-form">
       <textarea v-model="newComment" type="text" placeholder="Comment here"></textarea>
       <div v-if="errors && errors.body" class="invalid-feedback">
