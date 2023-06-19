@@ -6,14 +6,6 @@
 
 @section('content')
 
-<!-- Title jumbotron -->
-<section class="title-jumbotron">
-    <div class="parallax-text">
-        <div class="heading">Read more</div>
-    </div>
-</section>
-<!-- /.Title jumbotron -->
-
 <!-- Show post page -->
 <section class="news-show">
     <div class="news-show-wrapper">
@@ -25,7 +17,7 @@
                     data-src="{{ Storage::url($post->photo->path) }}" alt="{{ $post->title }}">
             </div>
             @if ($post->photo_source)
-            <p class="photo-source">{{ $post->photo_source }}</p>
+            <button class="photo-source">{{ $post->photo_source }}</button>
             @endif
             @endif
             <p class="meta">
@@ -44,13 +36,13 @@
             <h1>{{ $post->title }}</h1>
             <p>{{ $post->description }}</p>
             {!! clean($post->body) !!}
-            <div class="item-line"></div>
+            {{-- <div class="item-line"></div> --}}
             <div class="meta-bottom">
-                <div class="post-tags">
+                {{-- <div class="post-tags">
                     @foreach ($post->tags as $tag)
                     <a href="{{ $tag->slug }}" class="button">#{{ lcfirst($tag->title) }}</a>
                     @endforeach
-                </div>
+                </div> --}}
                 <div class="votes">
                     <!-- Likes Vue Component -->
                     {{-- <likes :default_likes="{{ $post->likes }}" :entity_id="{{ $post->id }}" 

@@ -117,7 +117,7 @@ class User extends Authenticatable
      */
     public function getSlugAttribute()
     {
-        return url("users/" . Str::slug($this->name));
+        return url("users/{$this->id}-" . Str::slug($this->name));
     }
 
     /**

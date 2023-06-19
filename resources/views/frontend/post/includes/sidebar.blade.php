@@ -2,7 +2,7 @@
     <!-- Related posts -->
     <div class="related-posts-widget">
         @if (count($related))
-        <h4>Read next</h4>
+        <h4>Read More</h4>
         @foreach ($related as $post)
         <ul class="related">
             <li>
@@ -32,13 +32,13 @@
     <!-- /.Related posts -->
     
     <!-- Tag widget -->
-    <div class="tag-widget">
+    {{-- <div class="tag-widget">
         <h4>Read by tags</h4>
         <div class="tag-cloud">
             @foreach ($tags as $tag)
             <a href="{{ $tag->slug }}">#{{ lcfirst($tag->title) }}</a>
             @endforeach
         </div>
-    </div>
+    </div> --}}
     <!-- /.Tag widget -->
 </aside>

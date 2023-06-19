@@ -40,7 +40,7 @@
                     <nav>
                         <ul>
                             <li class="sub-menu">
-                                <a href="javascript:void(0)">News</a>
+                                <a href="javascript:void(0)">Categories</a>
                                 <ul>
                                     <li>
                                         <a href="{{ url('/categories/digital-marketing') }}" class="sub-item">
@@ -50,18 +50,8 @@
                                     
                                 </ul>
                             </li>
-                            <li class="sub-menu">
-                                <a href="javascript:void(0)">By Tags</a>
-                                <ul>
-                                    <li>
-                                        <a href="{{ url('/tags/worldwide') }}" class="sub-item">
-                                            <span>Worldwide</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
                             <li>
-                                <a href="{{ route('contact') }}">Contacts</a>
+                                <a href="{{ route('contact') }}">Contact</a>
                             </li>
                             @guest
                             <li>
@@ -132,11 +122,11 @@
                         </div>
                     </div>
                     <div class="footer_links">
-                        <p>News</p>
+                        <p>Categories</p>
                         <ul>
                             <li>
-                                <a href="{{ url('/categories/demo') }}">
-                                    <span>demo</span>
+                                <a href="{{ url('/categories/seo') }}">
+                                    <span>SEO</span>
                                 </a>
                             </li>
                             
@@ -152,7 +142,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('contact') }}">
-                                    <span>Contacts</span>
+                                    <span>Contact</span>
                                 </a>
                             </li>
                             @guest

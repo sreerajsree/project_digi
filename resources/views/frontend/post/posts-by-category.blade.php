@@ -36,7 +36,7 @@
                 <p class="item-blog-text">
                     {{ $post_item->excerpt }}{{ $post_item->three_dots }}
                 </p>
-                @if ($post_item->user)
+                {{-- @if ($post_item->user)
                 <div class="item-blog-author">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-user"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -47,8 +47,8 @@
                         {{ $post_item->user->name }}
                     </a>
                 </div>
-                @endif
-                <div class="item-blog-time-to-read">
+                @endif --}}
+                {{-- <div class="item-blog-time-to-read">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-clock"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9
@@ -69,7 +69,7 @@
                     </a>
                 </div>
                 @endif
-                <p class="item-blog-date">{{ $post_item->date }}</p>
+                <p class="item-blog-date">{{ $post_item->date }}</p> --}}
             </div>
         </div>
         @empty

@@ -38,7 +38,7 @@
 
 <!-- Posts section -->
 <section class="news">
-    <h1>Latest news</h1>
+    <h1>Latest News</h1>
     <div class="news-wrapper">
         @forelse ($posts as $post_item)
         <div class="item">
@@ -82,7 +82,7 @@
 
 <!-- Random posts slider -->
 <section class="slider">
-    <h3>Read next</h3>
+    <h3>Read More</h3>
     <div class="contact-slider">
         <div class="contact-slider-wrapper">
             @foreach ($random_posts as $post_item)
