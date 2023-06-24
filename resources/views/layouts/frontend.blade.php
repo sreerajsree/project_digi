@@ -14,7 +14,6 @@
         <!-- Styles -->
         @livewireStyles
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6496c7967674a90012611553&product=sticky-share-buttons&source=platform" async="async"></script>
     </head>   
     <!-- /.Head -->
     

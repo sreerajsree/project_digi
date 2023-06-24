@@ -5,7 +5,7 @@
 @section('meta', $post->description)
 
 @section('content')
-
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6496c7967674a90012611553&product=sticky-share-buttons&source=platform" async="async"></script>
 <!-- Show post page -->
 <section class="news-show">
     <div class="news-show-wrapper">
