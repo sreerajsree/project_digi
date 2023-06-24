@@ -15,6 +15,9 @@ header {
     .menu-wrapper {
         width: 80%;
         margin: auto;
+        @media screen and (max-width: 650px) {
+            width: 90%;
+        }
         .logo {
             height: 75px;
             line-height: 75px;

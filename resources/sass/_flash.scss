@@ -2,7 +2,7 @@
 .flash {
     width: 100%;
     .flash-wrapper {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
         background-color: hsl(204, 33%, 97%);
         border-top: 4px solid #cccccc;
@@ -13,6 +13,7 @@
         color: #0084ff;
         @media screen and (max-width: 500px) {
             padding: 20px;
+            width: 90%;
         }
     }
 }

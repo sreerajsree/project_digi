@@ -138,7 +138,7 @@
                             <a href="{{ url('/') }}">
                                 digi<span class="logo-span">shaz</span>
                             </a>
-                            <p class="about">DigiShaz is an exceptional team of individuals dedicated to curating and answering tech-related questions sourced from Google users worldwide.</p>
+                            <p class="about">DIGISHAZ is an exceptional team of individuals dedicated to curating and answering tech-related questions sourced from Google users worldwide.</p>
                         </div>
                     </div>
                     <div class="footer_links">

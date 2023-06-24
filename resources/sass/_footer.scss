@@ -17,6 +17,9 @@ footer {
             grid-template-columns: 100%;
             margin: 0 auto;
         }
+        @media screen and (max-width: 650px) {
+            width: 90%;
+        }
         .footer_about {
             padding: 26px 0 0 0;
             .logo {
@@ -24,6 +27,7 @@ footer {
                 text-transform: uppercase;
                 .about{
                     width: 70%;
+                    text-transform: capitalize;
                 }
                 a {
                     margin: 0 0 10px 0;

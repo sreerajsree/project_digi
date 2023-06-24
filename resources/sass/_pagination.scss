@@ -2,9 +2,12 @@
 .news-pagination {
     width: 100%;
     .news-pagination-wrapper {
-        width: 90%;
+        width: 80%;
         margin: auto;
         text-align: center;
+        @media screen and (max-width: 650px) {
+            width: 90%;
+        }
         nav  {
             ul.pagination {
                 display: inline-block;

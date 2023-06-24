@@ -2,9 +2,12 @@
 .subscribed-unsubscribed {
     width: 100%;
     .subscribed-unsubscribed-wrapper {
-        width: 90%;
+        width: 80%;
         margin: 60px auto;
         text-align: center;
+        @media screen and (max-width: 650px) {
+            width: 90%;
+        }
         h1 {
             font-weight: normal;
             font-size: 3.9rem;
