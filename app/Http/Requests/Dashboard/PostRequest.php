@@ -26,7 +26,7 @@ class PostRequest extends FormRequest
     {
         return [
             'body' => 'required',
-            'description' => 'required|max:800',
+            'description' => 'required',
             'time_to_read' => 'required',
             'photo_source' => 'max:200',
             'published' => '',

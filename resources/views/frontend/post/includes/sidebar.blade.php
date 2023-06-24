@@ -2,7 +2,7 @@
     <!-- Related posts -->
     <div class="related-posts-widget">
         @if (count($related))
-        <h4>Read More</h4>
+        <h4>You may also like</h4>
         @foreach ($related as $post)
         <ul class="related">
             <li>

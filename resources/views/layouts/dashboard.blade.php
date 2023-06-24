@@ -26,7 +26,7 @@
             <div class="menu-wrapper">
                 <div class="logo">
                     <a href="{{ url('/') }}">
-                        airways<span class="logo-span">media</span>
+                        Digi<span class="logo-span">shaz</span>
                     </a>
                 </div>
                 <!-- Navigation -->

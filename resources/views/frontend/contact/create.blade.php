@@ -22,7 +22,7 @@
             <p>
                 We are here to answer any question related to our subject or help you.
             </p>
-            <h3>social</h3>
+            <h3>SOCIAL</h3>
             <p>
                 <span class="contact-social">facebook</span>
                 <span class="contact-social">twitter</span>

@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', $chosen_category->title . ' - Airways Media')
+@section('title', strtoupper(preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_category->title)) . ' - Airways Media')
 
 @section('meta', 'An authoritative source of aviation news and international travel affairs from the experts')
 
@@ -9,7 +9,7 @@
 <!-- Title jumbotron -->
 <section class="title-jumbotron">
     <div class="parallax-text">
-        <h1>{{ $chosen_category->title }}</h1>
+        <h1>{{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_category->title) }}</h1>
     </div>
 </section>
 <!-- /.Title jumbotron -->
@@ -33,9 +33,9 @@
                 <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
                     <h2>{{ $post_item->title }}</h2>
                 </a>
-                <p class="item-blog-text">
+                {{-- <p class="item-blog-text">
                     {{ $post_item->excerpt }}{{ $post_item->three_dots }}
-                </p>
+                </p> --}}
                 {{-- @if ($post_item->user)
                 <div class="item-blog-author">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-user"

@@ -13,7 +13,7 @@ header {
     z-index: 99;
     box-shadow: 0 0 12.48px 0.52px rgba(48, 178, 32, 0.04);
     .menu-wrapper {
-        width: 90%;
+        width: 80%;
         margin: auto;
         .logo {
             height: 75px;
@@ -35,12 +35,14 @@ header {
                 margin: 0%;
                 padding: 0%;
                 display: flex;
+                text-transform: uppercase;
+                font-weight: 600;
                 li {
                     position: relative;
                     font-size: 1.4rem;
                     a {
                         line-height: 75px;
-                        height: 75px;
+                        margin: 10px 0px;
                         padding: 0 20px;
                         color: #000;
                         display: inline-block;
@@ -57,8 +59,7 @@ header {
                             display: block;
                             width: 200px;
                             a.sub-item {
-                                line-height: 50px;
-                                height: 50px;
+                                line-height: 20px;
                             }
                         }
                     }
@@ -144,7 +145,7 @@ header .menu-wrapper nav ul li.active ul {
 
 header .menu-wrapper nav ul li.sub-menu:before {
     content: "▾";
-    line-height: 75px;
+    line-height: 90px;
     position: absolute;
     right: 5px;
 }

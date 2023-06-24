@@ -23,7 +23,7 @@
             <p class="meta">
                 @if ($post->category)
                 <a href="{{ $post->category->slug }}" class="show-category">
-                    {{ $post->category->title }}
+                    {{ strtoupper(preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post->category->title)) }}
                 </a>
                 @endif
                 {{ $post->publish_date_time }}
@@ -33,8 +33,9 @@
                 </a>
                 @endif
             </p>
-            <h1>{{ $post->title }}</h1>
+            <p class="main-title">{{ $post->title }}</p>
             <p>{{ $post->description }}</p>
+            <div class="sharethis-sticky-share-buttons"></div>
             {!! clean($post->body) !!}
             {{-- <div class="item-line"></div> --}}
             <div class="meta-bottom">

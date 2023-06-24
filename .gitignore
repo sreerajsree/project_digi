@@ -4,6 +4,7 @@
 /public/sitemap.xml
 /storage/*.key
 /vendor
+/storage
 /nbproject
 .env
 .env.backup

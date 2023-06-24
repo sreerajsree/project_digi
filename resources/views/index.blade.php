@@ -38,7 +38,7 @@
 
 <!-- Posts section -->
 <section class="news">
-    <h1>Latest News</h1>
+    <h1>Latest Articles</h1>
     <div class="news-wrapper">
         @forelse ($posts as $post_item)
         <div class="item">
@@ -52,13 +52,16 @@
                 </a>
             </div>
             @endif
+            <a href="{{ $post_item->category->slug }}" class="category">
+                {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post_item->category->title) }}
+            </a>
             <div class="item-content">
                 <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
                     <h2>{{ $post_item->title }}</h2>
                 </a>
-                <p class="item-blog-text">
+                {{-- <p class="item-blog-text">
                     {{ $post_item->excerpt }}{{ $post_item->three_dots }}
-                </p>
+                </p> --}}
             </div>
         </div>
         @empty
@@ -81,7 +84,7 @@
 <!-- /.Subscription livewire component widget -->
 
 <!-- Random posts slider -->
-<section class="slider">
+{{-- <section class="slider">
     <h3>Read More</h3>
     <div class="contact-slider">
         <div class="contact-slider-wrapper">
@@ -109,7 +112,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> --}}
 <!-- /.Random posts slider -->
 
 @endsection
@@ -117,8 +120,8 @@
 @push('scripts')
 
 <!-- Scripts -->
-<script src="{{ asset('js/slick.min.js') }}"></script>
-<script src="{{ asset('js/slick_users.js') }}"></script>
+{{-- <script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/slick_users.js') }}"></script> --}}
 <!-- /.Scripts -->
 
 @endpush

@@ -14,6 +14,7 @@
         <!-- Styles -->
         @livewireStyles
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6496c7967674a90012611553&product=sticky-share-buttons&source=platform" async="async"></script>
     </head>   
     <!-- /.Head -->
     
@@ -40,14 +41,33 @@
                     <nav>
                         <ul>
                             <li class="sub-menu">
-                                <a href="javascript:void(0)">Categories</a>
+                                <a href="javascript:void(0)">Topics</a>
                                 <ul>
                                     <li>
                                         <a href="{{ url('/categories/digital-marketing') }}" class="sub-item">
                                             <span>Digital Marketing</span>
                                         </a>
                                     </li>
-                                    
+                                    <li>
+                                        <a href="{{ url('/categories/artificial-intelligence') }}" class="sub-item">
+                                            <span>Artificial Intelligence</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/categories/cyber-security') }}" class="sub-item">
+                                            <span>Cyber Security</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/categories/travel-and-hospitality') }}" class="sub-item">
+                                            <span>Travel & Hospitality</span>
+                                        </a>
+                                    </li>      
+                                    <li>
+                                        <a href="{{ url('/categories/others') }}" class="sub-item">
+                                            <span>Others</span>
+                                        </a>
+                                    </li>       
                                 </ul>
                             </li>
                             <li>
@@ -119,6 +139,7 @@
                             <a href="{{ url('/') }}">
                                 digi<span class="logo-span">shaz</span>
                             </a>
+                            <p class="about">DigiShaz is an exceptional team of individuals dedicated to curating and answering tech-related questions sourced from Google users worldwide.</p>
                         </div>
                     </div>
                     <div class="footer_links">

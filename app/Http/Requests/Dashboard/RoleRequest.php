@@ -25,7 +25,7 @@ class RoleRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'bail|required|min:2|max:30',
+            'title' => 'bail|required',
         ];
     }
 

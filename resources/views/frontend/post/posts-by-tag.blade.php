@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', $chosen_tag->title . ' - Airways Media')
+@section('title', strtoupper({{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_tag->title) }}) . ' - Airways Media')
 
 @section('meta', 'An authoritative source of aviation news and international travel affairs from the experts')
 
@@ -9,7 +9,7 @@
 <!-- Title jumbotron -->
 <section class="title-jumbotron">
     <div class="parallax-text">
-        <h1>{{ $chosen_tag->title }}</h1>
+        <h1>{{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_tag->title) }}</h1>
     </div>
 </section>
 <!-- /.Title jumbotron -->
