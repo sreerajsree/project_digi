@@ -45,8 +45,7 @@
     });
 </script>
 <!-- /.Scripts -->
-<script src="https://cdn.tiny.cloud/1/or30vnattjfewkqddql58gyvexgoltbqt0z2fkx3t2iwu0l5/tinymce/6/tinymce.min.js"
-        referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/ixle0z1ai7rwqgaiicjfvkm4lhgcdsjf4jv3yf1ivog2z8t2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: '#mytextarea',

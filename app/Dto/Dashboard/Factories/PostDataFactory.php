@@ -18,7 +18,6 @@ class PostDataFactory
             title: $request->get('title'),
             body: $request->get('body'),
             description: $request->get('description'),
-            time_to_read: $request->get('time_to_read'),
             photo_source: $request->get('photo_source'),
             published: $request->get('published'),
             category_id: $request->get('category_id'),

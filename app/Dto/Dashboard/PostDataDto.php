@@ -21,7 +21,6 @@ class PostDataDto
         private string $title,
         private string $body,
         private string $description,
-        private int $time_to_read,
         private ?string $photo_source,
         private bool $published,
         private int $category_id,

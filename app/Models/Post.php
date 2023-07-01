@@ -30,7 +30,6 @@ class Post extends Model
         'category_id',
         'published',
         'photo_source',
-        'time_to_read',
         'publish_time',
     ];
 

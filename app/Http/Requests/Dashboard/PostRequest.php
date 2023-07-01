@@ -27,7 +27,6 @@ class PostRequest extends FormRequest
         return [
             'body' => 'required',
             'description' => 'required',
-            'time_to_read' => 'required',
             'photo_source' => 'max:200',
             'published' => '',
             'category_id' => 'required',
@@ -74,7 +73,6 @@ class PostRequest extends FormRequest
             'title' => $dto->getTitle(),
             'body' => $dto->getBody(),
             'description' => $dto->getDescription(),
-            'time_to_read' => $dto->getTimeToRead(),
             'photo_source' => $dto->getPhotoSource(),
             'published' => $dto->getPublished(),
             'category_id' => $dto->getCategoryId(),
