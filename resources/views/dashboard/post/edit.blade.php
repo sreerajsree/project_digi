@@ -58,42 +58,42 @@
                     block: 'h1',
                     styles: {
                         'font-weight': 'normal',
-                        'font-size': '2.3rem'
+                        'font-size': '1.8rem'
                     }
                 },
                 h2: {
                     block: 'h2',
                     styles: {
                         'font-weight': 'normal',
-                        'font-size': '2.2rem'
+                        'font-size': '1.8rem'
                     }
                 },
                 h3: {
                     block: 'h3',
                     styles: {
                         'font-weight': 'normal',
-                        'font-size': '2.1rem'
+                        'font-size': '1.8rem'
                     }
                 },
                 h4: {
                     block: 'h4',
                     styles: {
                         'font-weight': 'normal',
-                        'font-size': '2rem'
+                        'font-size': '1.8rem'
                     }
                 },
                 h5: {
                     block: 'h5',
                     styles: {
                         'font-weight': 'normal',
-                        'font-size': '1.9rem'
+                        'font-size': '1.8rem'
                     }
                 },
                 h6: {
                     block: 'h6',
                     styles: {
                         'font-weight': 'normal',
-                        'font-size': '1.7rem'
+                        'font-size': '1.8rem'
                     }
                 },
             },

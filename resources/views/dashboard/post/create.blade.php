@@ -44,65 +44,64 @@
     });
 </script>
 <!-- /.Scripts -->
-  <script src="https://cdn.tiny.cloud/1/ixle0z1ai7rwqgaiicjfvkm4lhgcdsjf4jv3yf1ivog2z8t2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-
-    <script>
-        tinymce.init({
-            selector: '#mytextarea',
-            height: "600",
-            plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
-            toolbar_mode: 'floating',
-            extended_valid_elements : 'script[src|async|defer|type|charset]',
-            formats: {
-                h1: {
-                    block: 'h1',
-                    styles: {
-                        'font-weight': 'normal',
-                        'font-size': '2.3rem'
-                    }
-                },
-                h2: {
-                    block: 'h2',
-                    styles: {
-                        'font-weight': 'normal',
-                        'font-size': '2.2rem'
-                    }
-                },
-                h3: {
-                    block: 'h3',
-                    styles: {
-                        'font-weight': 'normal',
-                        'font-size': '2.1rem'
-                    }
-                },
-                h4: {
-                    block: 'h4',
-                    styles: {
-                        'font-weight': 'normal',
-                        'font-size': '2rem'
-                    }
-                },
-                h5: {
-                    block: 'h5',
-                    styles: {
-                        'font-weight': 'normal',
-                        'font-size': '1.9rem'
-                    }
-                },
-                h6: {
-                    block: 'h6',
-                    styles: {
-                        'font-weight': 'normal',
-                        'font-size': '1.7rem'
-                    }
-                },
+<script src="https://cdn.tiny.cloud/1/ixle0z1ai7rwqgaiicjfvkm4lhgcdsjf4jv3yf1ivog2z8t2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#mytextarea',
+        height: "600",
+        plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
+        toolbar_mode: 'floating',
+        extended_valid_elements : 'script[src|async|defer|type|charset]',
+        formats: {
+            h1: {
+                block: 'h1',
+                styles: {
+                    'font-weight': 'normal',
+                    'font-size': '1.8rem'
+                }
             },
-            setup: function(editor) {
-                editor.on('change', function() {
-                    tinymce.triggerSave();
-                });
-            }
-        });
-    </script>
+            h2: {
+                block: 'h2',
+                styles: {
+                    'font-weight': 'normal',
+                    'font-size': '1.8rem'
+                }
+            },
+            h3: {
+                block: 'h3',
+                styles: {
+                    'font-weight': 'normal',
+                    'font-size': '1.8rem'
+                }
+            },
+            h4: {
+                block: 'h4',
+                styles: {
+                    'font-weight': 'normal',
+                    'font-size': '1.8rem'
+                }
+            },
+            h5: {
+                block: 'h5',
+                styles: {
+                    'font-weight': 'normal',
+                    'font-size': '1.8rem'
+                }
+            },
+            h6: {
+                block: 'h6',
+                styles: {
+                    'font-weight': 'normal',
+                    'font-size': '1.8rem'
+                }
+            },
+        },
+        setup: function(editor) {
+            editor.on('change', function() {
+                tinymce.triggerSave();
+            });
+        }
+    });
+</script>
 
 @endpush

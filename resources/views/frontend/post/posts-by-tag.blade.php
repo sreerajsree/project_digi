@@ -1,8 +1,30 @@
 @extends('layouts.frontend')
 
-@section('title', strtoupper({{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_tag->title) }}) . ' - Airways Media')
+@section('title', $chosen_tag->title . ' - ' . 'Digishaz')
 
-@section('meta', 'An authoritative source of aviation news and international travel affairs from the experts')
+@section('meta')
+    <meta name="title" content="{{ $chosen_tag->title }} - Digishaz">
+    <meta name="description" content="">
+    <meta name="keywords" content="web">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="content-type" content="bundle">
+    <meta property="og:description" content="{{ $chosen_tag->title }}">
+    <meta property="og:image" content="{{ Storage::url($posts_by_tag[0]->photo->path) }}">
+    <meta property="og:site_name" content="Digishaz">
+    <meta property="og:title" content="{{ $chosen_tag->title }} - Digishaz">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="article:content_tier" content="free">
+    <meta http-equiv="content-language" content="en-US">
+    <meta property="article:author" content="Digishaz">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://digishaz.com">
+    <meta property="twitter:title" content="{{ $chosen_tag->title }} - Digishaz">
+    <meta property="twitter:description" content="{{ $chosen_tag->title }}">
+    <meta property="twitter:site" content="@Digishaz_">
+    <meta property="twitter:image" content="{{ Storage::url($posts_by_tag[0]->photo->path) }}">
+    <meta property="twitter:creator" content="@Digishaz_">
+@endsection
 
 @section('content')
 

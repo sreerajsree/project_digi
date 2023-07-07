@@ -7,7 +7,7 @@ header {
     left: 0;
     padding: 0;
     position: absolute;
-    background: #fff;
+    background: #000;
     width: 100%;
     height: 75px;
     z-index: 99;
@@ -25,7 +25,7 @@ header {
             float: left;
             text-transform: uppercase;
             a {
-                color: #000;
+                color: #fff;
                 span.logo-span {
                     font-weight: 600;
                 }
@@ -42,25 +42,29 @@ header {
                 font-weight: 600;
                 li {
                     position: relative;
-                    font-size: 1.4rem;
+                    font-size: 12px;
                     a {
                         line-height: 75px;
-                        margin: 10px 0px;
-                        padding: 0 20px;
-                        color: #000;
+                        padding: 0 10px;
+                        color: #eee;
                         display: inline-block;
                         letter-spacing: 1px;
+                    }
+                    :hover{
+                        text-decoration: underline;
+                        text-underline-offset: 3px;
                     }
                     ul {
                         position: absolute;
                         left: 0;
-                        background: #fff;
+                        background: #000;
                         box-shadow: 2px 2px hsl(204, 33%, 97%);
                         display: none;
                         z-index: 99;
                         li {
                             display: block;
                             width: 200px;
+                            padding: 10px;
                             a.sub-item {
                                 line-height: 20px;
                             }
@@ -148,9 +152,10 @@ header .menu-wrapper nav ul li.active ul {
 
 header .menu-wrapper nav ul li.sub-menu:before {
     content: "▾";
-    line-height: 90px;
+    line-height: 74px;
     position: absolute;
-    right: 5px;
+    right: 0px;
+    color: #eee;
 }
 
 header .menu-wrapper nav ul li.active.sub-menu:before {

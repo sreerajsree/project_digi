@@ -1,42 +1,64 @@
 @extends('layouts.frontend')
 
-@section('title', strtoupper(preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_category->title)) . ' - Airways Media')
+@section('title', $chosen_category->title . ' - ' . 'Digishaz')
 
-@section('meta', 'An authoritative source of aviation news and international travel affairs from the experts')
+@section('meta')
+    <meta name="title" content="{{ $chosen_category->title }} - Digishaz">
+    <meta name="description" content="">
+    <meta name="keywords" content="web">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="content-type" content="bundle">
+    <meta property="og:description" content="{{ $chosen_category->title }}">
+    <meta property="og:image" content="{{ Storage::url($posts_by_category[0]->photo->path) }}">
+    <meta property="og:site_name" content="Digishaz">
+    <meta property="og:title" content="{{ $chosen_category->title }} - Digishaz">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="article:content_tier" content="free">
+    <meta http-equiv="content-language" content="en-US">
+    <meta property="article:author" content="Digishaz">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://digishaz.com">
+    <meta property="twitter:title" content="{{ $chosen_category->title }} - Digishaz">
+    <meta property="twitter:description" content="{{ $chosen_category->title }}">
+    <meta property="twitter:site" content="@Digishaz_">
+    <meta property="twitter:image" content="{{ Storage::url($posts_by_category[0]->photo->path) }}">
+    <meta property="twitter:creator" content="@Digishaz_">
+@endsection
 
 @section('content')
 
-<!-- Title jumbotron -->
-<section class="title-jumbotron">
-    <div class="parallax-text">
-        <h1>{{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_category->title) }}</h1>
-    </div>
-</section>
-<!-- /.Title jumbotron -->
+    <!-- Title jumbotron -->
+    <section class="title-jumbotron">
+        <div class="parallax-text">
+            <h1>{{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_category->title) }}</h1>
+        </div>
+    </section>
+    <!-- /.Title jumbotron -->
 
-<!-- Posts by category section -->
-<section class="news">
-    <div class="news-wrapper">
-        @forelse ($posts_by_category as $post_item)
-        <div class="item">
-            @if ($post_item->photo)
-            <div class="image-holder">
-                <a href="{{ route('post.show', [$post_item->slug]) }}">
-                    <img class="lazyload"
-                        src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                        data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
-                    <div class="image-overlay"></div>
-                </a>
-            </div>
-            @endif
-            <div class="item-content">
-                <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
-                    <h2>{{ $post_item->title }}</h2>
-                </a>
-                {{-- <p class="item-blog-text">
+    <!-- Posts by category section -->
+    <section class="news">
+        <div class="news-wrapper">
+            @forelse ($posts_by_category as $post_item)
+                <div class="item">
+                    @if ($post_item->photo)
+                        <div class="image-holder">
+                            <a href="{{ route('post.show', [$post_item->slug]) }}">
+                                <img class="lazyload"
+                                    src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                                    data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
+                                <div class="image-overlay"></div>
+                            </a>
+                        </div>
+                    @endif
+                    <div class="item-content">
+                        <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
+                            <h2>{{ $post_item->title }}</h2>
+                        </a>
+                        {{-- <p class="item-blog-text">
                     {{ $post_item->excerpt }}{{ $post_item->three_dots }}
                 </p> --}}
-                {{-- @if ($post_item->user)
+                        {{-- @if ($post_item->user)
                 <div class="item-blog-author">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-user"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -48,7 +70,7 @@
                     </a>
                 </div>
                 @endif --}}
-                {{-- <div class="item-blog-time-to-read">
+                        {{-- <div class="item-blog-time-to-read">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-clock"
                         fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9
@@ -70,21 +92,21 @@
                 </div>
                 @endif
                 <p class="item-blog-date">{{ $post_item->date }}</p> --}}
-            </div>
+                    </div>
+                </div>
+            @empty
+                <h3>Temporarily unavailable</h3>
+            @endforelse
         </div>
-        @empty
-        <h3>Temporarily unavailable</h3>
-        @endforelse
-    </div>
-</section>
-<!-- /.Posts by category section -->
+    </section>
+    <!-- /.Posts by category section -->
 
-<!-- Pagination -->
-<section class="news-pagination">
-    <div class="news-pagination-wrapper">
-        {{ $posts_by_category->links('vendor.pagination.default') }}
-    </div>
-</section>
-<!-- /.Pagination -->
+    <!-- Pagination -->
+    <section class="news-pagination">
+        <div class="news-pagination-wrapper">
+            {{ $posts_by_category->links('vendor.pagination.default') }}
+        </div>
+    </section>
+    <!-- /.Pagination -->
 
 @endsection

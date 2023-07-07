@@ -1,8 +1,37 @@
 @extends('layouts.frontend')
 
-@section('title', 'Digishaz - Home')
+@section('title', 'DIGISHAZ: Discover Engaging Content and Stay Informed.')
 
-@section('meta', '')
+@section('meta')
+    <meta name="title" content="DIGISHAZ: Discover Engaging Content and Stay Informed.">
+    <meta name="description"
+        content="Explore a world of captivating content and stay informed with DIGISHAZ. Dive into our diverse collection of articles and insights.">
+    <meta name="keywords"
+        content="web">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="content-type" content="homepage">
+    <meta property="og:description"
+        content="Explore a world of captivating content and stay informed with DIGISHAZ. Dive into our diverse collection of articles and insights.">
+    <meta property="og:image" content="{{ asset('logo.jpg') }}">
+    <meta property="og:site_name" content="DIGISHAZ: Discover Engaging Content and Stay Informed.">
+    <meta property="og:title" content="DIGISHAZ: Discover Engaging Content and Stay Informed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config('app.url') }}">
+    <meta property="article:content_tier" content="free">
+    <meta http-equiv="content-language" content="en-US">
+    <meta property="article:author" content="Digishaz">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://digishaz.com">
+    <meta property="twitter:title" content="DIGISHAZ: Discover Engaging Content and Stay Informed.">
+    <meta property="twitter:description"
+        content="Explore a world of captivating content and stay informed with DIGISHAZ. Dive into our diverse collection of articles and insights.">
+    <meta property="twitter:site" content="@tfe_worldwide">
+    <meta property="twitter:image"
+    content="{{ asset('logo.jpg') }}">
+    <meta property="twitter:creator" content="@Digishaz_">
+    <meta name="dcterms.rightsHolder" content="Digishaz">
+    <meta name="dcterms.dateCopyrighted" content="{{ now()->year }}">
+@endsection
 
 @section('content')
 

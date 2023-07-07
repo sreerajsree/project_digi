@@ -4,15 +4,23 @@
     
     <!-- Head -->
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title', config('app.name'))</title>
-        <meta name="description" content="@yield('meta', config('app.name'))">
-        <meta name="robots" content="index, follow">
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+        <meta name="author" content="Digishaz">
+        <meta name="theme-color" content="#000" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="copyright" content="Digishaz {{ now()->year }}">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta property="og:locale" content="en_US">
+        @yield('meta')
+        <link rel="canonical" href="{{ url()->current() }}">
         <!-- Styles -->
         @livewireStyles
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>   
     <!-- /.Head -->
@@ -39,38 +47,26 @@
                     <!-- Navigation -->
                     <nav>
                         <ul>
-                            <li class="sub-menu">
-                                <a href="javascript:void(0)">Topics</a>
-                                <ul>
-                                    <li>
-                                        <a href="{{ url('/categories/digital-marketing') }}" class="sub-item">
-                                            <span>Digital Marketing</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/categories/artificial-intelligence') }}" class="sub-item">
-                                            <span>Artificial Intelligence</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/categories/cyber-security') }}" class="sub-item">
-                                            <span>Cyber Security</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/categories/travel-and-hospitality') }}" class="sub-item">
-                                            <span>Travel & Hospitality</span>
-                                        </a>
-                                    </li>      
-                                    <li>
-                                        <a href="{{ url('/categories/others') }}" class="sub-item">
-                                            <span>Others</span>
-                                        </a>
-                                    </li>       
-                                </ul>
+                            <li>
+                                <a href="">News</a>
                             </li>
                             <li>
-                                <a href="{{ route('contact') }}">Contact</a>
+                                <a href="">Trending</a>
+                            </li>
+                            <li>
+                                <a href="">Digital Marketing</a>
+                            </li>
+                            <li>
+                                <a href="">Cryptocurrency</a>
+                            </li>
+                            <li>
+                                <a href="">AI</a>
+                            </li>
+                            <li>
+                                <a href="">Social Media</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('contact') }}">Others</a>
                             </li>
                             @guest
                             <li>
@@ -145,9 +141,25 @@
                         <p>Categories</p>
                         <ul>
                             <li>
-                                <a href="{{ url('/categories/seo') }}">
-                                    <span>SEO</span>
-                                </a>
+                                <a href="">News</a>
+                            </li>
+                            <li>
+                                <a href="">Digital Marketing</a>
+                            </li>
+                            <li>
+                                <a href="">Cryptocurrency</a>
+                            </li>
+                            <li>
+                                <a href="">AI</a>
+                            </li>
+                            <li>
+                                <a href="">Social Media</a>
+                            </li>
+                            <li>
+                                <a href="">Trending</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('contact') }}">Others</a>
                             </li>
                             
                         </ul>

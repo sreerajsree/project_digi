@@ -17,7 +17,7 @@ header {
   left: 0;
   padding: 0;
   position: absolute;
-  background: #fff;
+  background: #000;
   width: 100%;
   height: 75px;
   z-index: 99;
@@ -40,7 +40,7 @@ header .menu-wrapper .logo {
   text-transform: uppercase;
 }
 header .menu-wrapper .logo a {
-  color: #000;
+  color: #fff;
 }
 header .menu-wrapper .logo a span.logo-span {
   font-weight: 600;
@@ -58,20 +58,23 @@ header .menu-wrapper nav ul {
 }
 header .menu-wrapper nav ul li {
   position: relative;
-  font-size: 1.4rem;
+  font-size: 12px;
 }
 header .menu-wrapper nav ul li a {
   line-height: 75px;
-  margin: 10px 0px;
-  padding: 0 20px;
-  color: #000;
+  padding: 0 10px;
+  color: #eee;
   display: inline-block;
   letter-spacing: 1px;
+}
+header .menu-wrapper nav ul li :hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 header .menu-wrapper nav ul li ul {
   position: absolute;
   left: 0;
-  background: #fff;
+  background: #000;
   box-shadow: 2px 2px hsl(204, 33%, 97%);
   display: none;
   z-index: 99;
@@ -79,6 +82,7 @@ header .menu-wrapper nav ul li ul {
 header .menu-wrapper nav ul li ul li {
   display: block;
   width: 200px;
+  padding: 10px;
 }
 header .menu-wrapper nav ul li ul li a.sub-item {
   line-height: 20px;
@@ -156,9 +160,10 @@ header .menu-wrapper nav ul li.active ul {
 
 header .menu-wrapper nav ul li.sub-menu:before {
   content: "▾";
-  line-height: 90px;
+  line-height: 74px;
   position: absolute;
-  right: 5px;
+  right: 0px;
+  color: #eee;
 }
 
 header .menu-wrapper nav ul li.active.sub-menu:before {
@@ -220,7 +225,7 @@ header .menu-wrapper nav ul li.active.sub-menu:before {
 footer {
   width: 100%;
   min-height: 250px;
-  background-color: #f5f8fa;
+  background-color: #000;
   overflow: hidden;
 }
 footer .footer_wrapper_upper {
@@ -259,14 +264,14 @@ footer .footer_wrapper_upper .footer_about .logo .about {
 }
 footer .footer_wrapper_upper .footer_about .logo a {
   margin: 0 0 10px 0;
-  color: #000;
+  color: #eee;
 }
 footer .footer_wrapper_upper .footer_about .logo a span.logo-span {
   font-weight: 600;
 }
 footer .footer_wrapper_upper .footer_about .logo p {
   margin-top: 15px;
-  color: #3d3d4e;
+  color: #eee;
 }
 footer .footer_wrapper_upper .footer_about .logo p i {
   margin-left: 1rem;
@@ -289,7 +294,7 @@ footer .footer_wrapper_upper .footer_links ul li {
   padding: 0;
 }
 footer .footer_wrapper_upper .footer_links ul li a {
-  color: #3d3d4e;
+  color: #eee;
   font-size: 1.3rem;
   text-transform: uppercase;
 }
@@ -304,7 +309,7 @@ footer .footer_wrapper_upper .footer_links ul li a:hover {
 footer .footer_wrapper_down {
   width: 90%;
   margin: 50px auto 5px;
-  border-top: 1px solid #3d3d4e;
+  border-top: 1px solid #eee;
   display: grid;
   grid-template-columns: 75% 25%;
 }
@@ -320,11 +325,12 @@ footer .footer_wrapper_down {
 }
 footer .footer_wrapper_down .footer_copyright {
   margin: 20px 0;
-  color: #3d3d4e;
+  color: #eee;
 }
 footer .footer_wrapper_down .footer_copyright p {
   font-size: 1.2rem;
   text-transform: uppercase;
+  color: #eee;
 }
 @media screen and (max-width: 1000px) {
   footer .footer_wrapper_down .footer_copyright {
@@ -806,7 +812,7 @@ footer .footer_wrapper_down .footer_copyright p {
 .news-show .news-show-wrapper .item-itself .main-title {
   font-weight: 600;
   font-size: 2.5rem;
-  margin: 20px 0;
+  margin: 60px 0;
   line-height: 32px;
 }
 .news-show .news-show-wrapper .item-itself .thumbnail {
@@ -937,6 +943,10 @@ footer .footer_wrapper_down .footer_copyright p {
   height: 1px;
   background-color: #4e4e4e;
   margin: 30px 0 10px;
+}
+.news-show .news-show-wrapper .item-itself .post-body h1, .news-show .news-show-wrapper .item-itself h2, .news-show .news-show-wrapper .item-itself h3, .news-show .news-show-wrapper .item-itself h4, .news-show .news-show-wrapper .item-itself h5, .news-show .news-show-wrapper .item-itself h6 {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 .news-show .news-show-wrapper .item-itself .meta-bottom {
   display: flex;
@@ -1821,7 +1831,7 @@ footer .footer_wrapper_down .footer_copyright p {
   margin: 60px auto;
 }
 .dashboard .dashboard-wrapper a.button {
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   padding: 7px 16px;
   display: inline-block;
   margin: 0 0 20px 0;
@@ -1833,9 +1843,9 @@ footer .footer_wrapper_down .footer_copyright p {
   color: #000;
 }
 .dashboard .dashboard-wrapper a.button:hover {
-  background-color: #f75679;
+  background-color: #000;
   color: #fff;
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   transition: all 0.3s ease-in-out;
 }
 .dashboard .dashboard-wrapper a.button:not(:hover) {
@@ -1867,7 +1877,7 @@ footer .footer_wrapper_down .footer_copyright p {
   transition: all 0.3s ease-in-out;
 }
 .dashboard .dashboard-wrapper button.delete-show-page {
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   padding: 7px 16px;
   cursor: pointer;
   font-size: 1.2rem;
@@ -1880,9 +1890,9 @@ footer .footer_wrapper_down .footer_copyright p {
   color: #000;
 }
 .dashboard .dashboard-wrapper button.delete-show-page:hover {
-  background-color: #f75679;
+  background-color: #000;
   color: #fff;
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   transition: all 0.3s ease-in-out;
 }
 .dashboard .dashboard-wrapper button.delete-show-page:not(:hover) {
@@ -1994,10 +2004,10 @@ footer .footer_wrapper_down .footer_copyright p {
 }
 .dashboard button.action-button-red {
   color: #fff;
-  background-color: #f75679;
+  background-color: #000;
   padding: 1px 5px;
   border-radius: 5px;
-  border: 1px solid #f75679;
+  border: 1px solid #000;
   margin: 4px;
   display: inline-block;
   outline: none;
@@ -2011,7 +2021,7 @@ footer .footer_wrapper_down .footer_copyright p {
   display: inline-block;
 }
 .dashboard button.button {
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   padding: 7px 16px;
   cursor: pointer;
   font-size: 1.2rem;
@@ -2023,9 +2033,9 @@ footer .footer_wrapper_down .footer_copyright p {
   outline: none;
 }
 .dashboard button.button:hover {
-  background-color: #f75679;
+  background-color: #000;
   color: #fff;
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   transition: all 0.3s ease-in-out;
 }
 .dashboard button.button:not(:hover) {
@@ -2041,7 +2051,7 @@ footer .footer_wrapper_down .footer_copyright p {
   width: 100%;
 }
 .dashboard form.create-update .form-wrapper .form-error {
-  color: #f75679;
+  color: #000;
   font-size: 1.2rem;
 }
 .dashboard form.create-update .form-wrapper label {
@@ -2121,7 +2131,7 @@ footer .footer_wrapper_down .footer_copyright p {
 .dashboard form.create-update .form-wrapper .post-image .post-image-overlay a.action-button-delete {
   margin: 10px 0 0 10px;
   color: #fff;
-  background-color: #f75679;
+  background-color: #000;
   padding: 2px 5px;
   border-radius: 5px;
   display: inline-block;
@@ -2161,7 +2171,7 @@ footer .footer_wrapper_down .footer_copyright p {
   content: "";
 }
 .dashboard form.create-update .form-wrapper label.radio-container input.form-radio:checked ~ span.radio-checkmark {
-  background-color: #f75679;
+  background-color: #000;
 }
 .dashboard form.create-update .form-wrapper label.radio-container input.form-radio:checked ~ span.radio-checkmark:after {
   display: block;
@@ -2195,7 +2205,7 @@ footer .footer_wrapper_down .footer_copyright p {
   width: 0;
 }
 .dashboard form.create-update .form-wrapper .checkbox-container input:checked ~ .checkmark {
-  background-color: #f75679;
+  background-color: #000;
 }
 .dashboard form.create-update .form-wrapper .checkbox-container input:checked ~ .checkmark:after {
   display: block;
@@ -2240,7 +2250,7 @@ footer#dashboard-footer .dashboard-footer-wrapper p {
   padding: 15px 0;
 }
 footer#dashboard-footer .dashboard-footer-wrapper p a {
-  color: #f75679;
+  color: #000;
 }
 
 /* Sweet Alert styles */

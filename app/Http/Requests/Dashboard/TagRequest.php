@@ -25,7 +25,7 @@ class TagRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'bail|required|regex:/^[a-zA-Z]+$/',
+            'title' => 'required',
         ];
     }
 

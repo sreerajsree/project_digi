@@ -1,8 +1,40 @@
 @extends('layouts.frontend')
 
-@section('title', $post->title)
+@section('title', $post->title . ' - ' . 'Digishaz')
 
-@section('meta', $post->description)
+@section('meta')
+    <meta name="title" content="{{ $post->title }} - Digishaz">
+    <meta name="description" content="{{ $post->description }}">
+    <meta name="keywords" content="web">
+    <meta name="news_keywords" content="web">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="content-type" content="article">
+    <meta property="og:description" content="{{ $post->description }}">
+    <meta property="og:image"
+        content="{{ Storage::url($post->photo->path) }}">
+    <meta property="og:image:alt" content="{{ $post->title }} - Digishaz">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:site_name" content="Digishaz">
+    <meta property="og:title" content="{{ $post->title }} - Digishaz">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="article:content_tier" content="free">
+    <meta property="article:opinion" content="false">
+    <meta http-equiv="content-language" content="en-US">
+    <meta property="article:section" content="tags">
+    <meta property="article:published_time" content="{{ $post->created_at }}">
+    <meta property="article:modified_time" content="{{ $post->updated_at }}">
+    <meta property="article:author" content="{{ $post->user->name }}">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://digishaz.com">
+    <meta property="twitter:title" content="{{ $post->title }} - Digishaz">
+    <meta property="twitter:description" content="{{ $post->description }}">
+    <meta property="twitter:site" content="@Digishaz_">
+    <meta property="twitter:image"
+        content="{{ Storage::url($post->photo->path) }}">
+    <meta property="twitter:creator" content="@Digishaz_">
+@endsection
 
 @section('content')
 <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6496c7967674a90012611553&product=sticky-share-buttons&source=platform" async="async"></script>
@@ -10,6 +42,7 @@
 <section class="news-show">
     <div class="news-show-wrapper">
         <div class="item-itself">
+            <p class="main-title">{{ $post->title }}</p>
             @if ($post->photo)
             <div class="thumbnail">
                 <img class="lazyload"
@@ -33,10 +66,11 @@
                 </a>
                 @endif
             </p>
-            <p class="main-title">{{ $post->title }}</p>
             <p>{{ $post->description }}</p>
             <div class="sharethis-sticky-share-buttons"></div>
-            {!! clean($post->body) !!}
+            <div class="post-body">
+                {!! clean($post->body) !!}
+            </div>
             {{-- <div class="item-line"></div> --}}
             <div class="meta-bottom">
                 {{-- <div class="post-tags">
