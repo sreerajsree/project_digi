@@ -26,6 +26,18 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQYTWTP11Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VQYTWTP11Y');
+    </script>
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -72,25 +84,25 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="">News</a>
+                            <a href="/categories/12-News">News</a>
                         </li>
                         <li>
-                            <a href="">Trending</a>
+                            <a href="/categories/13-Trending">Trending</a>
                         </li>
                         <li>
-                            <a href="">Digital Marketing</a>
+                            <a href="/categories/08-Digital-Marketing">Digital Marketing</a>
                         </li>
                         <li>
-                            <a href="">Cryptocurrency</a>
+                            <a href="/categories/11-Crypto-Currency">Cryptocurrency</a>
                         </li>
                         <li>
-                            <a href="">AI</a>
+                            <a href="/categories/09-Artificial-Intelligence">AI</a>
                         </li>
                         <li>
-                            <a href="">Social Media</a>
+                            <a href="/categories/10-Social-Media">Social Media</a>
                         </li>
                         <li>
-                            <a href="{{ route('contact') }}">Others</a>
+                            <a href="/categories/14-others">Others</a>
                         </li>
                         @guest
                             <li>
@@ -168,27 +180,26 @@
                     <p>Categories</p>
                     <ul>
                         <li>
-                            <a href="">News</a>
+                            <a href="/categories/12-News">News</a>
                         </li>
                         <li>
-                            <a href="">Digital Marketing</a>
+                            <a href="/categories/13-Trending">Trending</a>
                         </li>
                         <li>
-                            <a href="">Cryptocurrency</a>
+                            <a href="/categories/08-Digital-Marketing">Digital Marketing</a>
                         </li>
                         <li>
-                            <a href="">AI</a>
+                            <a href="/categories/11-Crypto-Currency">Cryptocurrency</a>
                         </li>
                         <li>
-                            <a href="">Social Media</a>
+                            <a href="/categories/09-Artificial-Intelligence">AI</a>
                         </li>
                         <li>
-                            <a href="">Trending</a>
+                            <a href="/categories/10-Social-Media">Social Media</a>
                         </li>
                         <li>
-                            <a href="{{ route('contact') }}">Others</a>
+                            <a href="/categories/14-others">Others</a>
                         </li>
-
                     </ul>
                 </div>
                 <div class="footer_links">

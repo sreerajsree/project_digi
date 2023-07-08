@@ -66,7 +66,7 @@
                 </a>
                 @endif
             </p>
-            <p>{{ $post->description }}</p>
+           
             <div class="sharethis-sticky-share-buttons"></div>
             <div class="post-body">
                 {!! clean($post->body) !!}
