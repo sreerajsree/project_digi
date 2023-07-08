@@ -1,183 +1,210 @@
 <!doctype html>
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    
-    <!-- Head -->
-    <head>
-        <title>@yield('title', config('app.name'))</title>
-        <meta charset="UTF-8">
-        <meta content="IE=edge" http-equiv="X-UA-Compatible">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="referrer" content="no-referrer-when-downgrade">
-        <meta name="author" content="Digishaz">
-        <meta name="theme-color" content="#000" />
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="copyright" content="Digishaz {{ now()->year }}">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta property="og:locale" content="en_US">
-        @yield('meta')
-        <link rel="canonical" href="{{ url()->current() }}">
-        <!-- Styles -->
-        @livewireStyles
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    </head>   
-    <!-- /.Head -->
-    
-    <!-- Body -->
-    <body>
-        @env('production')
-        
-        @endenv
-        
-        @include('cookie-consent::index')
-        
-        <!-- App -->
-        <div id="app">
-            
-            <!-- Header -->
-            <header>
-                <div class="menu-wrapper">
-                    <div class="logo">
-                        <a href="{{ url('/') }}">
-                            digi<span class="logo-span">shaz</span>
-                        </a>
-                    </div>
-                    <!-- Navigation -->
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="">News</a>
-                            </li>
-                            <li>
-                                <a href="">Trending</a>
-                            </li>
-                            <li>
-                                <a href="">Digital Marketing</a>
-                            </li>
-                            <li>
-                                <a href="">Cryptocurrency</a>
-                            </li>
-                            <li>
-                                <a href="">AI</a>
-                            </li>
-                            <li>
-                                <a href="">Social Media</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('contact') }}">Others</a>
-                            </li>
-                            @guest
+
+<!-- Head -->
+
+<head>
+    <title>@yield('title', config('app.name'))</title>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="kVCbIFPultFtVw4xdKmZNrtnLhfi45Rt6NC1RGhUadA"  />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="author" content="Digishaz">
+    <meta name="theme-color" content="#000" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="copyright" content="Digishaz {{ now()->year }}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:locale" content="en_US">
+    @yield('meta')
+    <link rel="canonical" href="{{ url()->current() }}">
+    <!-- Styles -->
+    @livewireStyles
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-N68RV2X');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<!-- /.Head -->
+
+<!-- Body -->
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N68RV2X" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    @include('cookie-consent::index')
+
+    <!-- App -->
+    <div id="app">
+
+        <!-- Header -->
+        <header>
+            <div class="menu-wrapper">
+                <div class="logo">
+                    <a href="{{ url('/') }}">
+                        digi<span class="logo-span">shaz</span>
+                    </a>
+                </div>
+                <!-- Navigation -->
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="">News</a>
+                        </li>
+                        <li>
+                            <a href="">Trending</a>
+                        </li>
+                        <li>
+                            <a href="">Digital Marketing</a>
+                        </li>
+                        <li>
+                            <a href="">Cryptocurrency</a>
+                        </li>
+                        <li>
+                            <a href="">AI</a>
+                        </li>
+                        <li>
+                            <a href="">Social Media</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('contact') }}">Others</a>
+                        </li>
+                        @guest
                             <li>
                                 <a href="{{ route('login') }}">Sign in</a>
                             </li>
-                            @endguest
-                            @auth
+                        @endguest
+                        @auth
                             <li class="sub-menu">
                                 <a href="javascript:void(0)">{{ Auth::user()->name }}</a>
                                 <ul>
                                     <li>
-                                        <a href="{{ route('logout') }}" class="sub-item" onclick="event.preventDefault();
+                                        <a href="{{ route('logout') }}" class="sub-item"
+                                            onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                             <span>Logout</span>
                                         </a>
-                                        <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none;">
+                                        <form action="{{ route('logout') }}" method="POST" id="logout-form"
+                                            style="display: none;">
                                             @csrf
                                         </form>
                                     </li>
                                     @can('viewAny', \App\Models\Post::class)
-                                    <li>
-                                        <a href="/dashboard/posts" class="sub-item">
-                                            <span>Dashboard</span>
-                                        </a>
-                                    </li>
+                                        <li>
+                                            <a href="/dashboard/posts" class="sub-item">
+                                                <span>Dashboard</span>
+                                            </a>
+                                        </li>
                                     @endcan
                                 </ul>
                             </li>
-                            @endauth
-                            <li>
-                                <a href="javascript:void(0)" id="search">
-                                    <i class="fas fa-search"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- /.Navigation -->
-                    <div class="menu-toggle">
-                        <div class="hamburger-menu">
-                        </div>
-                    </div>
-                </div>
-                <!-- Search overlay -->
-                <div class="search-overlay">
-                    <span class="close-search">&times;</span>
-                    <form action="{{ route('search.index') }}" method="GET" class="search-input" autocomplete="off">
-                        @include('layouts.includes.fullscreen-search')
-                    </form>
-                </div>
-                <!-- /.Search overlay -->
-            </header>
-            <!-- /.Header -->
-            
-             <!-- Main -->
-            <main>
-                @yield('content')
-            </main>
-             <!-- /.Main -->
-
-            <!--Footer-->
-            <footer>
-                <div class="footer_wrapper_upper">
-                    <div class="footer_about">
-                        <div class="logo">
-                            <a href="{{ url('/') }}">
-                                digi<span class="logo-span">shaz</span>
+                        @endauth
+                        <li>
+                            <a href="javascript:void(0)" id="search">
+                                <i class="fas fa-search"></i>
                             </a>
-                            <p class="about">DIGISHAZ is an exceptional team of individuals dedicated to curating and answering tech-related questions sourced from Google users worldwide.</p>
-                        </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.Navigation -->
+                <div class="menu-toggle">
+                    <div class="hamburger-menu">
                     </div>
-                    <div class="footer_links">
-                        <p>Categories</p>
-                        <ul>
-                            <li>
-                                <a href="">News</a>
-                            </li>
-                            <li>
-                                <a href="">Digital Marketing</a>
-                            </li>
-                            <li>
-                                <a href="">Cryptocurrency</a>
-                            </li>
-                            <li>
-                                <a href="">AI</a>
-                            </li>
-                            <li>
-                                <a href="">Social Media</a>
-                            </li>
-                            <li>
-                                <a href="">Trending</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('contact') }}">Others</a>
-                            </li>
-                            
-                        </ul>
+                </div>
+            </div>
+            <!-- Search overlay -->
+            <div class="search-overlay">
+                <span class="close-search">&times;</span>
+                <form action="{{ route('search.index') }}" method="GET" class="search-input" autocomplete="off">
+                    @include('layouts.includes.fullscreen-search')
+                </form>
+            </div>
+            <!-- /.Search overlay -->
+        </header>
+        <!-- /.Header -->
+
+        <!-- Main -->
+        <main>
+            @yield('content')
+        </main>
+        <!-- /.Main -->
+
+        <!--Footer-->
+        <footer>
+            <div class="footer_wrapper_upper">
+                <div class="footer_about">
+                    <div class="logo">
+                        <a href="{{ url('/') }}">
+                            digi<span class="logo-span">shaz</span>
+                        </a>
+                        <p class="about">DIGISHAZ is an exceptional team of individuals dedicated to curating and
+                            answering tech-related questions sourced from Google users worldwide.</p>
                     </div>
-                    <div class="footer_links">
-                        <p>Navigation</p>
-                        <ul>
-                            <li>
-                                <a href="{{ url('/') }}">
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('contact') }}">
-                                    <span>Contact</span>
-                                </a>
-                            </li>
-                            @guest
+                </div>
+                <div class="footer_links">
+                    <p>Categories</p>
+                    <ul>
+                        <li>
+                            <a href="">News</a>
+                        </li>
+                        <li>
+                            <a href="">Digital Marketing</a>
+                        </li>
+                        <li>
+                            <a href="">Cryptocurrency</a>
+                        </li>
+                        <li>
+                            <a href="">AI</a>
+                        </li>
+                        <li>
+                            <a href="">Social Media</a>
+                        </li>
+                        <li>
+                            <a href="">Trending</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('contact') }}">Others</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="footer_links">
+                    <p>Navigation</p>
+                    <ul>
+                        <li>
+                            <a href="{{ url('/') }}">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('contact') }}">
+                                <span>Contact</span>
+                            </a>
+                        </li>
+                        @guest
                             <li>
                                 <a href="{{ route('login') }}">
                                     <span>Sign in</span>
@@ -188,98 +215,101 @@
                                     <span>Sign up</span>
                                 </a>
                             </li>
-                            @endguest
-                            @auth
+                        @endguest
+                        @auth
                             <li>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                     <span>Logout</span>
                                 </a>
-                                <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none;">
+                                <form action="{{ route('logout') }}" method="POST" id="logout-form"
+                                    style="display: none;">
                                     @csrf
                                 </form>
                             </li>
-                            @endauth
-                        </ul>
-                    </div>
-                    <!--Popular posts-->
-                    <div class="footer_links">
-                        <p>Legal</p>
-                        <ul>
-                            <li>
-                                <a href="{{ route('disclaimer') }}">
-                                    <span>Disclaimer</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('terms-and-conditions') }}">
-                                    <span>Terms and Conditions</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('privacy-policy') }}">
-                                    <span>Privacy Policy</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('cookie-policy') }}">
-                                    <span>Cookie Policy</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                        @endauth
+                    </ul>
                 </div>
-                <div class="footer_wrapper_down">
-                    <svg class="hidden">
+                <!--Popular posts-->
+                <div class="footer_links">
+                    <p>Legal</p>
+                    <ul>
+                        <li>
+                            <a href="{{ route('disclaimer') }}">
+                                <span>Disclaimer</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('terms-and-conditions') }}">
+                                <span>Terms and Conditions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('privacy-policy') }}">
+                                <span>Privacy Policy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('cookie-policy') }}">
+                                <span>Cookie Policy</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_wrapper_down">
+                <svg class="hidden">
                     <symbol id="icon-heart" viewBox="0 0 24 21">
-                        <path d="M20.497.957A6.765 6.765 0 0 0 17.22.114a6.76 
+                        <path
+                            d="M20.497.957A6.765 6.765 0 0 0 17.22.114a6.76 
                             6.76 0 0 0-5.218 2.455A6.778 6.778 0 0 0 3.506.957 
                             6.783 6.783 0 0 0 0 6.897c0 .732.12 1.434.335 2.09 
                             1.163 5.23 11.668 11.827 11.668 11.827s10.498-6.596 
                             11.663-11.826a6.69 6.69 0 0 0 .336-2.091 6.786 6.786 
                             0 0 0-3.505-5.94z" />
                     </symbol>
-                    </svg>
-                    <div class="footer_copyright">
-                        <p>&#169;{{ date('Y') }} - digishaz - Made with 
-                            <button class="iconbutton">
-                                <svg class="icon icon--heart">
+                </svg>
+                <div class="footer_copyright">
+                    <p>&#169;{{ date('Y') }} - digishaz - Made with
+                        <button class="iconbutton">
+                            <svg class="icon icon--heart">
                                 <use xlink:href="#icon-heart"></use>
-                                </svg>
-                            </button>
-                            for a better web
-                        </p>
-                    </div>
-                    <div class="footer_feedback">
-                        
-                    </div>
+                            </svg>
+                        </button>
+                        for a better web
+                    </p>
                 </div>
-            </footer>       
-            <!-- /.Footer -->
-        </div>
-        <!-- /.App -->
-        
-        <!--Scripts -->
-        <script>
-            window.AuthUser = '{!! auth()->user() !!}'
-            window.__auth = function () {
-                try {
-                    return JSON.parse(AuthUser)
-                } catch (error) {
-                    return null
-                }
+                <div class="footer_feedback">
+
+                </div>
+            </div>
+        </footer>
+        <!-- /.Footer -->
+    </div>
+    <!-- /.App -->
+
+    <!--Scripts -->
+    <script>
+        window.AuthUser = '{!! auth()->user() !!}'
+        window.__auth = function() {
+            try {
+                return JSON.parse(AuthUser)
+            } catch (error) {
+                return null
             }
-        </script>
-        @livewireScripts
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="{{ asset('js/lazyload.min.js') }}" defer></script>
-        @stack('scripts')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/lazyload_users.js') }}" defer></script>
-        <!-- /.Scripts -->
-        
-    </body>
-    <!-- /.Body -->
-    
+        }
+    </script>
+    @livewireScripts
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('js/lazyload.min.js') }}" defer></script>
+    @stack('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/lazyload_users.js') }}" defer></script>
+    <!-- /.Scripts -->
+
+</body>
+<!-- /.Body -->
+
 </html>
