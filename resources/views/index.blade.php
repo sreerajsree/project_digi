@@ -37,6 +37,9 @@
 
 <!-- Jumbotron section -->
 <section class="jumbothron">
+    <div class="hero">
+       <p> <span style="color: yellow">D</span>iscover engaging content anf stay informed.</p>
+    </div>
     @if ($featured)
     <div class="jumbothron-wrapper">
         <div class="content">

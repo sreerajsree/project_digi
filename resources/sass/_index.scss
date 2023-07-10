@@ -1,4 +1,22 @@
 /* Jumbotron index page styles */
+.hero{
+    padding-top: 20px;
+    p{
+        width: 80%;
+        background: #000;
+        color: white;
+        font-family: 'Belanosima', sans-serif;
+        margin: auto;
+        padding: 2.5%;
+        text-align: center;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        border-radius: 5px;
+    }
+}
+
+
+
 .jumbothron {
     width: 100%;
     min-height: 350px;
@@ -182,6 +200,9 @@
                     h2 {
                         margin: 10px 0;
                         font-size: 1.7rem;
+                    }
+                    &:hover{
+                        text-decoration: underline;
                     }
                 }
                 .item-blog-time-to-read {

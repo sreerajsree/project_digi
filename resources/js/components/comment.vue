@@ -116,7 +116,7 @@ export default {
 }
 
 .comment .replies button.add-reply-button:hover {
-  color: #f75679;
+  color: #000;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -127,7 +127,7 @@ export default {
 }
 
 .comment .replies .login-to-answer {
-  color: #f75679;
+  color: #000;
 }
 
 .comment .replies .add-reply textarea {
@@ -146,7 +146,7 @@ export default {
 }
 
 .comment .replies .add-reply button.button {
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   padding: 7px 16px;
   cursor: pointer;
   font-size: 1.2rem;
@@ -159,9 +159,9 @@ export default {
 }
 
 .comment .replies .add-reply button.button:hover {
-  background-color: #f75679;
+  background-color: #000;
   color: #fff;
-  border: 2px solid #f75679;
+  border: 2px solid #000;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -173,7 +173,7 @@ export default {
 }
 
 .comment .replies .invalid-feedback {
-  color: #f75679;
+  color: #000;
   font-size: 1.2rem;
   text-align: left;
   margin-left: 65px;

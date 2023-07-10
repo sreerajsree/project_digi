@@ -11,7 +11,7 @@
     <meta name="content-type" content="article">
     <meta property="og:description" content="{{ $post->description }}">
     <meta property="og:image"
-        content="{{ Storage::url($post->photo->path) }}">
+        content="http://digishaz.com/{{ Storage::url($post->photo->path) }}">
     <meta property="og:image:alt" content="{{ $post->title }} - Digishaz">
     <meta property="og:image:height" content="628">
     <meta property="og:image:width" content="1200">
@@ -32,7 +32,7 @@
     <meta property="twitter:description" content="{{ $post->description }}">
     <meta property="twitter:site" content="@Digishaz_">
     <meta property="twitter:image"
-        content="{{ Storage::url($post->photo->path) }}">
+        content="http://digishaz.com/{{ Storage::url($post->photo->path) }}">
     <meta property="twitter:creator" content="@Digishaz_">
 @endsection
 
@@ -43,16 +43,6 @@
     <div class="news-show-wrapper">
         <div class="item-itself">
             <p class="main-title">{{ $post->title }}</p>
-            @if ($post->photo)
-            <div class="thumbnail">
-                <img class="lazyload"
-                    src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                    data-src="{{ Storage::url($post->photo->path) }}" alt="{{ $post->title }}">
-            </div>
-            @if ($post->photo_source)
-            <button class="photo-source">{{ $post->photo_source }}</button>
-            @endif
-            @endif
             <p class="meta">
                 @if ($post->category)
                 <a href="{{ $post->category->slug }}" class="show-category">
@@ -66,18 +56,29 @@
                 </a>
                 @endif
             </p>
+            @if ($post->photo)
+            <div class="thumbnail">
+                <img class="lazyload"
+                    src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                    data-src="{{ Storage::url($post->photo->path) }}" alt="{{ $post->title }}">
+            </div>
+            @if ($post->photo_source)
+            <button class="photo-source">{{ $post->photo_source }}</button>
+            @endif
+            @endif
+            
            
             <div class="sharethis-sticky-share-buttons"></div>
             <div class="post-body">
                 {!! clean($post->body) !!}
             </div>
-            {{-- <div class="item-line"></div> --}}
+            <div class="item-line"></div>
             <div class="meta-bottom">
-                {{-- <div class="post-tags">
+                <div class="post-tags">
                     @foreach ($post->tags as $tag)
                     <a href="{{ $tag->slug }}" class="button">#{{ lcfirst($tag->title) }}</a>
                     @endforeach
-                </div> --}}
+                </div>
                 <div class="votes">
                     <!-- Likes Vue Component -->
                     {{-- <likes :default_likes="{{ $post->likes }}" :entity_id="{{ $post->id }}" 
@@ -85,11 +86,11 @@
                     </likes> --}}
                 </div>
             </div>
-            {{-- @guest
+            @guest
             <a href="{{ route('login') }}" class="auth-condition">Sign in to comment</a>
-            @endguest --}}
+            @endguest
             <!-- Comments Vue Component -->
-            {{-- <comments :post="{{ $post }}"></comments> --}}
+            <comments :post="{{ $post }}"></comments>
         </div>
         <!-- Sidebar -->
         @include('frontend.post.includes.sidebar')

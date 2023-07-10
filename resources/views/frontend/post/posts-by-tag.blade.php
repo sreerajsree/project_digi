@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="content-type" content="bundle">
     <meta property="og:description" content="{{ $chosen_tag->title }}">
-    <meta property="og:image" content="{{ Storage::url($posts_by_tag[0]->photo->path) }}">
+    <meta property="og:image" content="http://digishaz.com/{{ Storage::url($posts_by_tag[0]->photo->path) }}">
     <meta property="og:site_name" content="Digishaz">
     <meta property="og:title" content="{{ $chosen_tag->title }} - Digishaz">
     <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
     <meta property="twitter:title" content="{{ $chosen_tag->title }} - Digishaz">
     <meta property="twitter:description" content="{{ $chosen_tag->title }}">
     <meta property="twitter:site" content="@Digishaz_">
-    <meta property="twitter:image" content="{{ Storage::url($posts_by_tag[0]->photo->path) }}">
+    <meta property="twitter:image" content="http://digishaz.com/{{ Storage::url($posts_by_tag[0]->photo->path) }}">
     <meta property="twitter:creator" content="@Digishaz_">
 @endsection
 
