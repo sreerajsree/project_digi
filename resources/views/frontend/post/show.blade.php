@@ -11,7 +11,7 @@
     <meta name="content-type" content="article">
     <meta property="og:description" content="{{ $post->description }}">
     <meta property="og:image"
-        content="http://digishaz.com/{{ Storage::url($post->photo->path) }}">
+        content="{{ Storage::url($post->photo->path) }}">
     <meta property="og:image:alt" content="{{ $post->title }} - Digishaz">
     <meta property="og:image:height" content="628">
     <meta property="og:image:width" content="1200">
@@ -32,7 +32,7 @@
     <meta property="twitter:description" content="{{ $post->description }}">
     <meta property="twitter:site" content="@Digishaz_">
     <meta property="twitter:image"
-        content="http://digishaz.com/{{ Storage::url($post->photo->path) }}">
+        content="{{ Storage::url($post->photo->path) }}">
     <meta property="twitter:creator" content="@Digishaz_">
 @endsection
 
