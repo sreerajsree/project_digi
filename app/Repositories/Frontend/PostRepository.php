@@ -26,7 +26,8 @@ class PostRepository implements PostRepositoryContract
         return Post::with(['photo'])
                 ->where('published', 1)
                 ->orderBy('publish_time', 'desc')
-                ->first();
+                ->limit(7)
+                ->get();
     }
 
     /**
@@ -35,15 +36,12 @@ class PostRepository implements PostRepositoryContract
      * @param  Post  $featured
      * @return Post[]
      */
-    public function getAll($featured)
+    public function getAll()
     {
         return Post::with(['photo', 'category', 'user'])
                 ->where('published', 1)
-                ->when($featured, function ($query, $featured) {
-                        return $query->where('id', '<>', $featured->id);
-                })
-                    ->orderBy('publish_time', 'desc')
-                    ->paginate(12);
+                ->orderBy('publish_time', 'desc')
+                ->paginate(12);
     }
 
     /**
