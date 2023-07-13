@@ -61,7 +61,7 @@
     background-position: center center;
     float: left;
     padding-bottom: 19%;
-    width: 19%;
+    width: 29%;
     box-sizing: border-box;
     border: solid 0px #fff;
     border-top: none;
@@ -95,8 +95,8 @@
 #categories .categories-post-grid .category li.bigger .post-meta h2 {
     width: 90%;
     margin: 0 auto;
-    font-size: 29px;
-    letter-spacing: 3px;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
     text-align: left;
 }
 
@@ -135,10 +135,22 @@
     transition: all 100ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+#categories .categories-post-grid .category li .post-meta::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    -webkit-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+    opacity: 0.5;
+}
+
 #categories .categories-post-grid .category li .post-meta .post-titles {
     bottom: 0%;
     position: absolute;
-    background-color: #1d1d1d;
     width: 100%;
     margin: 0px auto;
     padding: 20px 0;
@@ -151,34 +163,14 @@
     transition: all 340ms cubic-bezier(0.42, 0, 0.585, 1.23)
 }
 
-#categories .categories-post-grid .category li .post-meta .post-titles .author-details {
-    margin: 5px auto 0 auto;
-    font-size: 14px;
-    display: block;
-    white-space: nowrap;
-    width: 100%;
-    font-family: "adobe-garamond-pro", serif;
-    font-style: italic;
-    display: none;
-}
 
-#categories .categories-post-grid .category li .post-meta .post-titles .author-details a {
-    font-family: "europa", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 12px;
-    padding: 0 3px
-}
 
 #categories .categories-post-grid .category li .post-meta h2 {
     width: 90%;
     margin: 0px auto;
-    text-transform: uppercase;
     text-align: left;
-    font-size: 15px;
-    letter-spacing: 2px;
+    font-size: 1.9rem;
+    letter-spacing: 1px;
     line-height: normal;
     -webkit-transition: opacity 340ms cubic-bezier(0.42, 0, 0.585, 1);
     -webkit-transition: opacity 340ms cubic-bezier(0.42, 0, 0.585, 1.23);
@@ -205,3 +197,28 @@
 #categories .categories-post-grid .category li .post-meta a:hover {
     color: #ccc
 }
+
+
+@media (max-width: 600px) {
+    #categories, .hero p, .news .news-wrapper {
+      width: 95%;
+    }
+
+    #categories .categories-post-grid .category li.bigger{
+        width: 100%;
+        height: 300px;
+    }
+
+    #categories .categories-post-grid .category li{
+        width: 49%;
+        height: 150px;
+    }
+
+    #categories .categories-post-grid .category li .post-meta h2{
+        font-size: 1.5rem;
+    }
+
+    #categories .categories-post-grid .category li .post-meta .post-titles{
+        padding: 10px 0;
+    }
+  }

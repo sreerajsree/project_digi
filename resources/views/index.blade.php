@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                             </li>
-                            @for($i = 1; $i < 7; $i++)
+                            @for($i = 1; $i < 5; $i++)
                             <li class=""
                             style="background-image: url('{{ Storage::url($featured[$i]->photo->path) }}')">
                             <div class="post-meta">
