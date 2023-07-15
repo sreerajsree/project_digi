@@ -61,13 +61,13 @@
     background-position: center center;
     float: left;
     padding-bottom: 19%;
-    width: 29%;
+    width: 30%;
     box-sizing: border-box;
     border: solid 0px #fff;
     border-top: none;
     border-right: none;
     position: relative;
-    margin: 0.5%
+    margin: 2px;
 }
 
 #categories .categories-post-grid .category li:nth-child(odd) {
@@ -80,7 +80,7 @@
 
 #categories .categories-post-grid .category li.bigger {
     width: 39%;
-    padding-bottom: 39%;
+    padding-bottom: 38.4%;
     float: left
 }
 
@@ -154,7 +154,7 @@
     width: 100%;
     margin: 0px auto;
     padding: 20px 0;
-    z-index: 999999;
+    z-index: 4999;
     -webkit-transition: all 340ms cubic-bezier(0.42, 0, 0.585, 1);
     -webkit-transition: all 340ms cubic-bezier(0.42, 0, 0.585, 1.23);
     -moz-transition: all 340ms cubic-bezier(0.42, 0, 0.585, 1.23);

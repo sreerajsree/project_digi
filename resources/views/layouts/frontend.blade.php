@@ -84,7 +84,7 @@
             <div class="menu-wrapper">
                 <div class="logo">
                     <a href="{{ url('/') }}">
-                        digi<span class="logo-span">shaz</span>
+                        <img class="mainlogo" src="{{ asset('images/logo.png') }}" alt="Digishaz Logo">
                     </a>
                 </div>
                 <!-- Navigation -->
@@ -177,7 +177,7 @@
                 <div class="footer_about">
                     <div class="logo">
                         <a href="{{ url('/') }}">
-                            digi<span class="logo-span">shaz</span>
+                            <img class="mainlogo" src="{{ asset('images/logo.png') }}" alt="Digishaz Logo">
                         </a>
                         <p class="about">DIGISHAZ is an exceptional team of individuals dedicated to curating and
                             answering tech-related questions sourced from Google users worldwide.</p>

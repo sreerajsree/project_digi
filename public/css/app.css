@@ -9,7 +9,7 @@ header {
   background: #000;
   width: 100%;
   height: 75px;
-  z-index: 99;
+  z-index: 9999;
   box-shadow: 0 0 12.48px 0.52px rgba(48, 178, 32, 0.04);
 }
 header .menu-wrapper {
@@ -33,6 +33,11 @@ header .menu-wrapper .logo a {
 }
 header .menu-wrapper .logo a span.logo-span {
   font-weight: 600;
+}
+header .menu-wrapper .mainlogo {
+  width: 80px;
+  height: auto;
+  padding-top: 8px;
 }
 header .menu-wrapper nav {
   float: right;
@@ -186,7 +191,7 @@ header .menu-wrapper nav ul li.active.sub-menu:before {
   }
   header .menu-wrapper nav ul li a {
     line-height: 60px;
-    height: 60px;
+    height: 40px;
     display: block;
   }
   header .menu-wrapper nav ul li.active ul {
@@ -239,6 +244,9 @@ footer .footer_wrapper_upper {
   footer .footer_wrapper_upper {
     width: 90%;
   }
+}
+footer .footer_wrapper_upper .mainlogo {
+  width: 80px;
 }
 footer .footer_wrapper_upper .footer_about {
   padding: 26px 0 0 0;
@@ -361,8 +369,8 @@ footer .footer_wrapper_down .footer_copyright p {
 
 /* Jumbotron index page styles */
 .hero {
-  padding-top: 100px;
-  padding-bottom: 10px;
+  padding-top: 80px;
+  padding-bottom: 0px;
 }
 .hero p {
   width: 80%;
@@ -498,22 +506,35 @@ footer .footer_wrapper_down .footer_copyright p {
 
 /* Latest news section */
 .news {
-  width: 100%;
-}
-.news h1 {
-  text-align: center;
-  margin-top: 30px;
-  font-family: "Anton", sans-serif;
-  text-transform: uppercase;
-}
-.news .news-wrapper {
   width: 80%;
   margin: 60px auto;
+}
+.news h1 {
+  border-bottom: 2px solid #000;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+  padding: 3px 15px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+.news h1:after {
+  left: 0px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  margin-top: 2px;
+  content: " ";
+  background: #000;
+}
+.news .news-wrapper {
+  width: 100%;
   display: grid;
-  grid-template-columns: 23% 23% 23% 23%;
-  row-gap: 35px;
-  -moz-column-gap: 2%;
-       column-gap: 2%;
+  grid-template-columns: 24% 24% 24% 25%;
+  row-gap: 10px;
+  -moz-column-gap: 1%;
+       column-gap: 1%;
   justify-content: space-between;
 }
 @media screen and (max-width: 1250px) {
