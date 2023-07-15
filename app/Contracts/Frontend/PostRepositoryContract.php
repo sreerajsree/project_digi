@@ -17,7 +17,6 @@ interface PostRepositoryContract
      * @param  \App\Post  $featured
      * @return \App\Post[]
      */
-    public function getAll($featured);
 
     /**
      * Fetch all tags from the database.
