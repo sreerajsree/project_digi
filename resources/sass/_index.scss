@@ -14,6 +14,9 @@
         letter-spacing: 1px;
         border-radius: 5px;
     }
+    @media screen and (max-width: 600px) {
+        padding-bottom: 4px;
+    }
 }
 
 
@@ -135,19 +138,9 @@
         background:#000;
         color:#fff;
         display:inline-block;
-        padding:3px 15px;
-        margin-left:10px;
+        padding: 3px 15px;
         margin-bottom: 30px;
-      }
-      h1:after{
-        left:0px;
-        display:block;
-        position:absolute;
-        width:100%;
-        height:3px;
-        margin-top:2px;
-        content: " ";
-        background:#000;
+        font-size: 2.5rem;
       }
     .news-wrapper {
         width: 100%;
@@ -164,6 +157,7 @@
             grid-template-columns: 100%;
         }
         .item {
+            border: 1px solid #4e4e4e;
             width: 100%;
             .image-holder {
                 overflow: hidden;

@@ -200,8 +200,12 @@
 
 
 @media (max-width: 600px) {
-    #categories, .hero p, .news .news-wrapper {
+    #categories, .hero p, .news {
       width: 95%;
+    }
+
+    .news .news-wrapper {
+        width: 100%;
     }
 
     #categories .categories-post-grid .category li.bigger{
@@ -210,8 +214,9 @@
     }
 
     #categories .categories-post-grid .category li{
-        width: 49%;
+        width: 50%;
         height: 150px;
+        margin: 0;
     }
 
     #categories .categories-post-grid .category li .post-meta h2{

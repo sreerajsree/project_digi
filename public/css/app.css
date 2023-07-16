@@ -384,6 +384,11 @@ footer .footer_wrapper_down .footer_copyright p {
   letter-spacing: 1px;
   border-radius: 5px;
 }
+@media screen and (max-width: 600px) {
+  .hero {
+    padding-bottom: 4px;
+  }
+}
 
 .jumbothron {
   width: 100%;
@@ -515,18 +520,8 @@ footer .footer_wrapper_down .footer_copyright p {
   color: #fff;
   display: inline-block;
   padding: 3px 15px;
-  margin-left: 10px;
   margin-bottom: 30px;
-}
-.news h1:after {
-  left: 0px;
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  margin-top: 2px;
-  content: " ";
-  background: #000;
+  font-size: 2.5rem;
 }
 .news .news-wrapper {
   width: 100%;
@@ -550,6 +545,7 @@ footer .footer_wrapper_down .footer_copyright p {
   }
 }
 .news .news-wrapper .item {
+  border: 1px solid #4e4e4e;
   width: 100%;
 }
 .news .news-wrapper .item .image-holder {
