@@ -109,34 +109,37 @@
     <!-- Posts section -->
     <section class="news">
         <h1>Latest Articles</h1>
-        <div class="news-wrapper">
-            @forelse ($posts as $post_item)
-                <div class="item">
-                    @if ($post_item->photo)
-                        <div class="image-holder">
-                            <a href="{{ route('post.show', [$post_item->slug]) }}">
-                                <img class="lazyload"
-                                    src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                                    data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
-                                <div class="image-overlay"></div>
+        <div class="news-container">
+            <div class="news-wrapper">
+                @forelse ($posts as $post_item)
+                    <div class="item">
+                        @if ($post_item->photo)
+                            <div class="image-holder">
+                                <a href="{{ route('post.show', [$post_item->slug]) }}">
+                                    <img class="lazyload"
+                                        src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                                        data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
+                                    <div class="image-overlay"></div>
+                                </a>
+                            </div>
+                        @endif
+                        <div class="category-container">
+                            <a href="{{ $post_item->category->slug }}" class="category">
+                                {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post_item->category->title) }}
                             </a>
+                            <div class="item-content">
+                                <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
+                                    <h2>{{ $post_item->title }}</h2>
+                                </a>
+                            </div>
                         </div>
-                    @endif
-                    <a href="{{ $post_item->category->slug }}" class="category">
-                        {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post_item->category->title) }}
-                    </a>
-                    <div class="item-content">
-                        <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
-                            <h2>{{ $post_item->title }}</h2>
-                        </a>
-                        {{-- <p class="item-blog-text">
-                    {{ $post_item->excerpt }}{{ $post_item->three_dots }}
-                </p> --}}
                     </div>
-                </div>
-            @empty
-                <h3>Temporarily unavailable</h3>
-            @endforelse
+                @empty
+                    <h3>Temporarily unavailable</h3>
+                @endforelse
+            </div>
+            <div class="ads">&nbsp;
+            </div>
         </div>
     </section>
     <!-- /.Posts section -->
@@ -150,7 +153,7 @@
     <!-- /.Pagination section -->
 
     <!-- Subscription livewire component widget -->
-    <!--<livewire:subscription />-->
+    <livewire:subscription />
     <!-- /.Subscription livewire component widget -->
 
     <!-- Random posts slider -->

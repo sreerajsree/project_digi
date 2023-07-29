@@ -39,12 +39,12 @@
                 object-fit: cover;
             }
             h1,h2,h3,h4,h5,h6 {
-                font-weight: normal;
+                font-weight: 900;
                 color: #000;
+                font-size: 27px;
             }
             h1 {
                 margin: 20px 0;
-                font-size: 3.2rem;
             }
             h2 {
                 padding: 15px 0;
@@ -62,7 +62,9 @@
                 padding: 7px 0;
             }
             a {
-                color: #0084ff;
+                color: #000;
+                text-decoration: underline;
+                text-decoration-color: yellow;
             }
             ul {
                 list-style: square inside;
@@ -152,8 +154,8 @@
                 margin: 30px 0 10px;
             }
             .post-body h1, h2, h3, h4, h5, h6{
-                font-size: 1.8rem;
-                font-weight: bold;
+                font-size: 26px;
+                font-weight: 900;
             }
             .meta-bottom {
                 display: flex;
@@ -197,6 +199,7 @@
                 font-size: 1.6rem;
                 color: #000;
                 text-align: center;
+                text-decoration: none;
                 &:hover{
                     border: 1px solid;
                 }

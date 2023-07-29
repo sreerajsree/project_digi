@@ -44,12 +44,6 @@ Route::get('password/reset/{token}', [ResetPasswordController::class, 'showReset
 Route::get('login/{provider}', [LoginController::class, 'redirectToProvider']);
 Route::get('login/{provider}/callback', [LoginController::class, 'handleProviderCallback']);
 
-//Post
-Route::get('/', [PostController::class, 'index'])->name('home');
-Route::get('content/{post}', [PostController::class, 'show'])->name('post.show');
-Route::get('categories/{category}', [PostController::class, 'postByCategory'])->name('posts.by.category');
-Route::get('tags/{tag}', [PostController::class, 'postByTag'])->name('posts.by.tag');
-Route::get('users/{user}', [PostController::class, 'postByUser'])->name('posts.by.user');
 //Contact
 Route::get('contact', [ContactFormController::class, 'create'])->name('contact');
 Route::post('contact', [ContactFormController::class, 'store'])->middleware(['honey']);
@@ -68,6 +62,13 @@ Route::view('privacy-policy', 'frontend.legal.privacy-policy')->name('privacy-po
 Route::view('terms-and-conditions', 'frontend.legal.terms-and-conditions')->name('terms-and-conditions');
 Route::view('disclaimer', 'frontend.legal.disclaimer')->name('disclaimer');
 Route::view('cookie-policy', 'frontend.legal.cookie-policy')->name('cookie-policy');
+
+//Post
+Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('content/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('{category}', [PostController::class, 'postByCategory'])->name('posts.by.category');
+Route::get('tags/{tag}', [PostController::class, 'postByTag'])->name('posts.by.tag');
+Route::get('users/{user}', [PostController::class, 'postByUser'])->name('posts.by.user');
 
 //Subscription
 Route::group(['prefix' => 'subscription'], function () {

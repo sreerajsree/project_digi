@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
 
-@section('title', 'Cookie policy')
+@section('title', 'Cookie policy - Digishaz')
 
-@section('meta', 'Airways Media - Cookie policy')
+@section('meta', 'Digishaz - Cookie policy')
 
 @section('content')
 
@@ -16,7 +16,7 @@
 
 <!-- Cookie policy page -->
 <section class="legal">
-    {{-- <div class="legal-wrapper">
+    <div class="legal-wrapper">
         <h2>What is a cookie?</h2>
         <p>
             Cookies are small pieces of data, stored in text files, that are stored on your computer or other device when
@@ -66,7 +66,7 @@
                 the information that is collected by these cookies.
             </li>
         </ul>
-    </div> --}}
+    </div>
 </section>
 <!-- /.Cookie policy page -->
 

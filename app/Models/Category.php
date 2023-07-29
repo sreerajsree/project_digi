@@ -30,6 +30,6 @@ class Category extends Model
      */
     public function getSlugAttribute()
     {
-        return url("categories/{$this->id}-" . Str::slug($this->title));
+        return url(Str::slug($this->title));
     }
 }

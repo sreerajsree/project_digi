@@ -91,25 +91,25 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="/categories/12-News">News</a>
+                            <a href="/news">News</a>
                         </li>
                         <li>
-                            <a href="/categories/13-Trending">Trending</a>
+                            <a href="/trending">Trending</a>
                         </li>
                         <li>
-                            <a href="/categories/08-Digital-Marketing">Digital Marketing</a>
+                            <a href="/digital-marketing">Digital Marketing</a>
                         </li>
                         <li>
-                            <a href="/categories/11-Crypto-Currency">Cryptocurrency</a>
+                            <a href="/crypto-currency">Cryptocurrency</a>
                         </li>
                         <li>
-                            <a href="/categories/09-Artificial-Intelligence">AI</a>
+                            <a href="/artificial-intelligence">AI</a>
                         </li>
                         <li>
-                            <a href="/categories/10-Social-Media">Social Media</a>
+                            <a href="/social-media">Social Media</a>
                         </li>
                         <li>
-                            <a href="/categories/14-others">Others</a>
+                            <a href="/others">Others</a>
                         </li>
                         @guest
                             <li>
@@ -187,25 +187,25 @@
                     <p>Categories</p>
                     <ul>
                         <li>
-                            <a href="/categories/12-News">News</a>
+                            <a href="/news">News</a>
                         </li>
                         <li>
-                            <a href="/categories/13-Trending">Trending</a>
+                            <a href="/trending">Trending</a>
                         </li>
                         <li>
-                            <a href="/categories/08-Digital-Marketing">Digital Marketing</a>
+                            <a href="/digital-marketing">Digital Marketing</a>
                         </li>
                         <li>
-                            <a href="/categories/11-Crypto-Currency">Cryptocurrency</a>
+                            <a href="/crypto-currency">Cryptocurrency</a>
                         </li>
                         <li>
-                            <a href="/categories/09-Artificial-Intelligence">AI</a>
+                            <a href="/artificial-intelligence">AI</a>
                         </li>
                         <li>
-                            <a href="/categories/10-Social-Media">Social Media</a>
+                            <a href="/social-media">Social Media</a>
                         </li>
                         <li>
-                            <a href="/categories/14-others">Others</a>
+                            <a href="/others">Others</a>
                         </li>
                     </ul>
                 </div>

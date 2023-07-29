@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
 
-@section('title', 'Privacy policy')
+@section('title', 'Privacy policy - Digishaz')
 
-@section('meta', 'Airways Media - Privacy policy')
+@section('meta', 'Digishaz - Privacy policy')
 
 @section('content')
 
@@ -16,12 +16,12 @@
 
 <!-- Privacy policy page -->
 <section class="legal">
-    {{-- <div class="legal-wrapper">
+    <div class="legal-wrapper">
         <p class="italic">Effective date: July 2021</p>
         <p class="italic">Last updated: August 15, 2021</p>
         <p>Your privacy and trust are important to us. We are committed to protecting your personal information and your
-            right to privacy. This Privacy Policy explains how Airways Media LLC (we refer to this as "Airways Media", "we",
-            "us", or "our") collects information from you on <a href="{{ url('/') }}">airways-media.com</a> (hereinafter
+            right to privacy. This Privacy Policy explains how Digishaz Media (we refer to this as "Digishaz Media", "we",
+            "us", or "our") collects information from you on <a href="{{ url('/') }}">digishaz.com</a> (hereinafter
             the "website" or "service"), how it is used, and what rights you have in relation to it. The term "you" refers
             to anyone who uses, visits and/or views the website.
         </p>
@@ -270,7 +270,7 @@
         <p>For any comments, concerns, complaints or questions regarding our privacy policy, please
             <a href="{{ route('contact') }}">contact us.</a>
         </p>
-    </div> --}}
+    </div>
 </section>
 <!-- /.Privacy policy page -->
 

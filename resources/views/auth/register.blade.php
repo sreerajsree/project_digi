@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Sign up')
+@section('title', 'Sign up - Digishaz')
 
 @section('content')
 

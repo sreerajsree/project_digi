@@ -89,11 +89,14 @@ class PostRepository implements PostRepositoryContract
      */
     public function getAllByCategory($category)
     {
+        $cat_id = Category::where('title', $category)
+            ->get()
+            ->first();
         return Post::with(['photo', 'category', 'user'])
-                ->where('category_id', $category)
-                ->orderBy('publish_time', 'desc')
-                ->where('published', 1)
-                ->paginate(12);
+            ->where('category_id', $cat_id->id)
+            ->orderBy('publish_time', 'desc')
+            ->where('published', 1)
+            ->paginate(10);
     }
 
     /**
@@ -104,7 +107,9 @@ class PostRepository implements PostRepositoryContract
      */
     public function getCategory($category)
     {
-        return Category::find($category);
+        return Category::where('title', $category)
+            ->get()
+            ->first();
     }
 
     /**
@@ -115,48 +120,41 @@ class PostRepository implements PostRepositoryContract
      */
     public function getAllByTag($tag)
     {
-        return Tag::find($tag)->posts()
-                ->with(['photo', 'category', 'user'])
-                ->where('published', 1)
-                ->orderBy('publish_time', 'desc')
-                ->paginate(12);
+        $tag_id = Tag::where('title', $tag)
+            ->get()
+            ->first();
+        return Tag::find($tag_id->id)
+            ->posts()
+            ->with(['photo', 'category', 'user'])
+            ->where('published', 1)
+            ->orderBy('publish_time', 'desc')
+            ->paginate(12);
     }
 
-    /**
-     * Get the specified tag from the database.
-     *
-     * @param Tag  $tag
-     * @return Tag
-     */
     public function getTag($tag)
     {
-        return Tag::find($tag);
+        return Tag::where('title', $tag)
+            ->get()
+            ->first();
     }
 
-    /**
-     * Fetch all posts associated with specified user.
-     *
-     * @param  User  $user
-     * @return Post[]
-     */
     public function getAllByUser($user)
     {
+        $user_id = User::where('name', $user)
+            ->get()
+            ->first();
         return Post::with(['photo', 'user', 'category'])
-                ->where('user_id', $user)
-                ->where('published', 1)
-                ->orderBy('publish_time', 'desc')
-                ->paginate(12);
+            ->where('user_id', $user_id->id)
+            ->where('published', 1)
+            ->orderBy('publish_time', 'desc')
+            ->paginate(12);
     }
 
-    /**
-     * Get the specified user from the database.
-     *
-     * @param User  $user
-     * @return User
-     */
     public function getUser($user)
     {
-        return User::find($user);
+        return User::where('name', $user)
+            ->get()
+            ->first();
     }
 
     /**
