@@ -28,57 +28,46 @@
 
 @section('content')
 
-<!-- Title jumbotron -->
-<section class="title-jumbotron">
-    <div class="parallax-text">
-        <h1>{{ strtoupper(preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_user->name)) }}</h1>
+<div class="container pt-100">
+    <div class="mvp-widget-home-head">
+        <h4 class="mvp-widget-home-title"> <span class="mvp-widget-home-title">{{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $chosen_user->name) }}</span></h4>
     </div>
-</section>
-<!-- /.Title jumbotron -->
-
-<!-- Posts by user section -->
-<section class="news">
-    <div class="news-container">
-        <div class="news-wrapper">
+    <div class="row">
+        <div class="col-md-9">
             @forelse ($posts_by_user as $post_item)
-                <div class="item">
-                    @if ($post_item->photo)
-                        <div class="image-holder">
-                            <a href="{{ route('post.show', [$post_item->slug]) }}">
-                                <img class="lazyload"
-                                    src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                                    data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
-                                <div class="image-overlay"></div>
-                            </a>
-                        </div>
-                    @endif
-                    <div class="category-container">
-                        <a href="{{ $post_item->category->slug }}" class="category">
-                            {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post_item->category->title) }}
-                        </a>
-                        <div class="item-content">
-                            <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
-                                <h2>{{ $post_item->title }}</h2>
-                            </a>
+                <a href="{{ route('post.show', [$post_item->slug]) }}">
+                    <div class="main-post">
+                        <img class="lazyload"
+                            src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                            data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
+                        <div class="content">
+                            <p class="category">
+                                {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post_item->category->title) }} /
+                                {{ $post_item->date }}</p>
+                            <p class="author">By {{ $post_item->user->name }}</p>
+                            <h3 class="title">{{ $post_item->title }}</h3>
+                            <p class="subtitle">
+                                {{ $post_item->excerpt }}{{ $post_item->three_dots }}
+                            </p>
                         </div>
                     </div>
-                </div>
+                </a>
             @empty
                 <h3>Temporarily unavailable</h3>
             @endforelse
+            <!-- Pagination section -->
+            <div class="news-pagination">
+                <div class="news-pagination-wrapper">
+                    {{ $posts_by_user->links('vendor.pagination.default') }}
+                </div>
+            </div>
+            <!-- /.Pagination section -->
         </div>
-        <div class="ads">&nbsp;
+        <div class="col-md-3">
+            <img class="lazyload pb-5"
+                src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                data-src="https://www.emaildrips.com/app/uploads/2021/01/Samsung-Google-Ad-example.png">
         </div>
     </div>
-</section>
-<!-- /.Posts by user section -->
-
-<!-- Pagination -->
-<section class="news-pagination">
-    <div class="news-pagination-wrapper">
-        {{ $posts_by_user->links('vendor.pagination.default') }}
-    </div>
-</section>
-<!-- /.Pagination -->
-
+</div>
 @endsection

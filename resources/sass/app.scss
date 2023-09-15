@@ -34,9 +34,19 @@ body {
     background-color: #fff;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 a {
     text-decoration: none;
     outline: none;
+    color: #000;
+    &:hover {
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 h1 {
@@ -69,6 +79,19 @@ p {
 
 ul {
     list-style: none;
+}
+
+.res-padding {
+    @media screen and (max-width: 600px) {
+        padding-top: 15px;
+    }
+}
+
+.pt-100 {
+    padding-top: 100px;
+    @media screen and (max-width: 600px) {
+        padding-top: 40px;
+    }
 }
 
 /* Jumbotron styles for all pages except index */

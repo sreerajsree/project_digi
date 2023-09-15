@@ -28,8 +28,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
@@ -79,91 +79,109 @@
     <!-- App -->
     <div id="app">
 
-        <!-- Header -->
-        <header>
-            <div class="menu-wrapper">
-                <div class="logo">
-                    <a href="{{ url('/') }}">
-                        <img class="mainlogo" src="{{ asset('images/logo.png') }}" alt="Digishaz Logo">
-                    </a>
-                </div>
-                <!-- Navigation -->
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="/news">News</a>
-                        </li>
-                        <li>
-                            <a href="/trending">Trending</a>
-                        </li>
-                        <li>
-                            <a href="/digital-marketing">Digital Marketing</a>
-                        </li>
-                        <li>
-                            <a href="/crypto-currency">Cryptocurrency</a>
-                        </li>
-                        <li>
-                            <a href="/artificial-intelligence">AI</a>
-                        </li>
-                        <li>
-                            <a href="/social-media">Social Media</a>
-                        </li>
-                        <li>
-                            <a href="/others">Others</a>
-                        </li>
-                        @guest
+        <nav>
+            <div class="wrapper">
+                <div class="logo"><a href="{{ url('/') }}">
+                        <img src="{{ asset('images/logo.png') }}" alt="Digishaz Logo">
+                    </a></div>
+                <input type="radio" name="slider" id="menu-btn">
+                <input type="radio" name="slider" id="close-btn">
+                <ul class="nav-links">
+                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="#" class="desktop-item">News</a>
+                        <input type="checkbox" id="showDrop">
+                        <label for="showDrop" class="mobile-item">News</label>
+                        <ul class="drop-menu">
                             <li>
-                                <a href="{{ route('login') }}">Sign in</a>
+                                <a href="/news">News</a>
                             </li>
-                        @endguest
-                        @auth
-                            <li class="sub-menu">
-                                <a href="javascript:void(0)">{{ Auth::user()->name }}</a>
-                                <ul>
-                                    <li>
-                                        <a href="{{ route('logout') }}" class="sub-item"
-                                            onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                            <span>Logout</span>
-                                        </a>
-                                        <form action="{{ route('logout') }}" method="POST" id="logout-form"
-                                            style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                    @can('viewAny', \App\Models\Post::class)
-                                        <li>
-                                            <a href="/dashboard/posts" class="sub-item">
-                                                <span>Dashboard</span>
-                                            </a>
-                                        </li>
-                                    @endcan
-                                </ul>
-                            </li>
-                        @endauth
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="desktop-item">Categories</a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile-item">Categories</label>
+                        <div class="mega-box">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <ul class="mega-links">
+                                            <li>
+                                                <a href="/trending">Trending</a>
+                                            </li>
+                                            <li>
+                                                <a href="/artificial-intelligence">AI</a>
+                                            </li>
+                                            <li>
+                                                <a href="/others">Others</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="mega-links">
+                                            <li>
+                                                <a href="/digital-marketing">Digital Marketing</a>
+                                            </li>
+                                            <li>
+                                                <a href="/social-media">Social Media</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="mega-links">
+                                            <li>
+                                                <a href="/crypto-currency">Cryptocurrency</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    @guest
                         <li>
-                            <a href="javascript:void(0)" id="search">
-                                <i class="fas fa-search"></i>
-                            </a>
+                            <a href="{{ route('login') }}">Sign in</a>
                         </li>
-                    </ul>
-                </nav>
-                <!-- /.Navigation -->
-                <div class="menu-toggle">
-                    <div class="hamburger-menu">
-                    </div>
-                </div>
+                    @endguest
+                    @auth
+                        <li class="sub-menu">
+                            <a href="javascript:void(0)">{{ Auth::user()->name }}</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ route('logout') }}" class="sub-item"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        <span>Logout</span>
+                                    </a>
+                                    <form action="{{ route('logout') }}" method="POST" id="logout-form"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                                @can('viewAny', \App\Models\Post::class)
+                                    <li>
+                                        <a href="/dashboard/posts" class="sub-item">
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </li>
+                    @endauth
+                    <li>
+                        <a href="javascript:void(0)" id="search">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
+                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
             </div>
-            <!-- Search overlay -->
-            <div class="search-overlay">
-                <span class="close-search">&times;</span>
-                <form action="{{ route('search.index') }}" method="GET" class="search-input" autocomplete="off">
-                    @include('layouts.includes.fullscreen-search')
-                </form>
-            </div>
-            <!-- /.Search overlay -->
-        </header>
-        <!-- /.Header -->
+        </nav>
 
         <!-- Main -->
         <main>
@@ -173,107 +191,109 @@
 
         <!--Footer-->
         <footer>
-            <div class="footer_wrapper_upper">
-                <div class="footer_about">
-                    <div class="logo">
-                        <a href="{{ url('/') }}">
-                            <img class="mainlogo" src="{{ asset('images/logo.png') }}" alt="Digishaz Logo">
-                        </a>
-                        <p class="about">DIGISHAZ is an exceptional team of individuals dedicated to curating and
-                            answering tech-related questions sourced from Google users worldwide.</p>
-                    </div>
-                </div>
-                <div class="footer_links">
-                    <p>Categories</p>
-                    <ul>
-                        <li>
-                            <a href="/news">News</a>
-                        </li>
-                        <li>
-                            <a href="/trending">Trending</a>
-                        </li>
-                        <li>
-                            <a href="/digital-marketing">Digital Marketing</a>
-                        </li>
-                        <li>
-                            <a href="/crypto-currency">Cryptocurrency</a>
-                        </li>
-                        <li>
-                            <a href="/artificial-intelligence">AI</a>
-                        </li>
-                        <li>
-                            <a href="/social-media">Social Media</a>
-                        </li>
-                        <li>
-                            <a href="/others">Others</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer_links">
-                    <p>Navigation</p>
-                    <ul>
-                        <li>
+            <div class="container">
+                <div class="footer_wrapper_upper">
+                    <div class="footer_about">
+                        <div class="logo">
                             <a href="{{ url('/') }}">
-                                <span>Home</span>
+                                <img class="mainlogo" src="{{ asset('images/logo.png') }}" alt="Digishaz Logo">
                             </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('contact') }}">
-                                <span>Contact</span>
-                            </a>
-                        </li>
-                        @guest
+                            <p class="about">DIGISHAZ is an exceptional team of individuals dedicated to curating and
+                                answering tech-related questions sourced from Google users worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="footer_links">
+                        <p>Categories</p>
+                        <ul>
                             <li>
-                                <a href="{{ route('login') }}">
-                                    <span>Sign in</span>
+                                <a href="/news">News</a>
+                            </li>
+                            <li>
+                                <a href="/trending">Trending</a>
+                            </li>
+                            <li>
+                                <a href="/digital-marketing">Digital Marketing</a>
+                            </li>
+                            <li>
+                                <a href="/crypto-currency">Cryptocurrency</a>
+                            </li>
+                            <li>
+                                <a href="/artificial-intelligence">AI</a>
+                            </li>
+                            <li>
+                                <a href="/social-media">Social Media</a>
+                            </li>
+                            <li>
+                                <a href="/others">Others</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_links">
+                        <p>Navigation</p>
+                        <ul>
+                            <li>
+                                <a href="{{ url('/') }}">
+                                    <span>Home</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('register') }}">
-                                    <span>Sign up</span>
+                                <a href="{{ route('contact') }}">
+                                    <span>Contact</span>
                                 </a>
                             </li>
-                        @endguest
-                        @auth
+                            @guest
+                                <li>
+                                    <a href="{{ route('login') }}">
+                                        <span>Sign in</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('register') }}">
+                                        <span>Sign up</span>
+                                    </a>
+                                </li>
+                            @endguest
+                            @auth
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                        <span>Logout</span>
+                                    </a>
+                                    <form action="{{ route('logout') }}" method="POST" id="logout-form"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                            @endauth
+                        </ul>
+                    </div>
+                    <!--Popular posts-->
+                    <div class="footer_links">
+                        <p>Legal</p>
+                        <ul>
                             <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                    <span>Logout</span>
+                                <a href="{{ route('disclaimer') }}">
+                                    <span>Disclaimer</span>
                                 </a>
-                                <form action="{{ route('logout') }}" method="POST" id="logout-form"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
                             </li>
-                        @endauth
-                    </ul>
-                </div>
-                <!--Popular posts-->
-                <div class="footer_links">
-                    <p>Legal</p>
-                    <ul>
-                        <li>
-                            <a href="{{ route('disclaimer') }}">
-                                <span>Disclaimer</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('terms-and-conditions') }}">
-                                <span>Terms and Conditions</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('privacy-policy') }}">
-                                <span>Privacy Policy</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('cookie-policy') }}">
-                                <span>Cookie Policy</span>
-                            </a>
-                        </li>
-                    </ul>
+                            <li>
+                                <a href="{{ route('terms-and-conditions') }}">
+                                    <span>Terms and Conditions</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('privacy-policy') }}">
+                                    <span>Privacy Policy</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('cookie-policy') }}">
+                                    <span>Cookie Policy</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer_wrapper_down">
@@ -306,7 +326,14 @@
         <!-- /.Footer -->
     </div>
     <!-- /.App -->
-
+ <!-- Search overlay -->
+ <div class="search-overlay">
+    <span class="close-search">&times;</span>
+    <form action="{{ route('search.index') }}" method="GET" class="search-input" autocomplete="off">
+        @include('layouts.includes.fullscreen-search')
+    </form>
+</div>
+<!-- /.Search overlay -->
     <!--Scripts -->
     <script>
         window.AuthUser = '{!! auth()->user() !!}'
@@ -320,6 +347,8 @@
     </script>
     @livewireScripts
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/lazyload.min.js') }}" defer></script>
     @stack('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>

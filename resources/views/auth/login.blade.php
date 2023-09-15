@@ -4,13 +4,11 @@
 
 @section('content')
 
-<!-- Title jumbotron -->
-<section class="title-jumbotron">
-    <div class="parallax-text">
-        <h1>Sign in</h1>
+<div class="container">
+    <div class="mvp-widget-home-head">
+        <h4 class="mvp-widget-home-title"> <span class="mvp-widget-home-title">Sign in</span></h4>
     </div>
-</section>
-<!-- /.Title jumbotron -->
+</div>
 
 <!-- Login page -->
 <section class="login-register">

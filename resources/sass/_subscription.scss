@@ -60,7 +60,9 @@
 /* Subscription widget (located in index page) */
 .subscription {
     width: 100%;
-    background-color: hsl(204, 33%, 97%);
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 20px;
     .subscription-wrapper {
         width: 90%;
         margin: 0 auto;
@@ -88,13 +90,13 @@
                 .form-group {
                     position: relative;
                     input {
-                        color: #000;
+                        color: #fff;
                         border-radius: 0;
                         outline: none;
                         width: 100%;
                         border: none;
                         padding: 10px 0;
-                        border-bottom: 1px solid #000;
+                        border-bottom: 1px solid #fff;
                         background-color: transparent;
                         font-size: 1.6rem;
                         &::placeholder {
@@ -176,9 +178,9 @@
                     }
                     small {
                         font-size: 1.3rem;
-                        color: #4e4e4e;
+                        color: #fff;
                         a {
-                            color: #f75679;
+                            color: #FFDE59;
                         }
                     }
                 }

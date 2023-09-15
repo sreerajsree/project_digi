@@ -6,16 +6,16 @@
 
 @section('content')
 
-<!-- Title jumbotron -->
-<section class="title-jumbotron">
-    <div class="parallax-text">
-        <h1>Privacy policy</h1>
+
+<div class="container pt-100">
+    <div class="mvp-widget-home-head">
+        <h4 class="mvp-widget-home-title"> <span class="mvp-widget-home-title">Privacy policy</span></h4>
     </div>
-</section>
-<!-- /.Title jumbotron -->
+</div>
+
 
 <!-- Privacy policy page -->
-<section class="legal">
+<section class="legal container">
     <div class="legal-wrapper">
         <p class="italic">Effective date: July 2021</p>
         <p class="italic">Last updated: August 15, 2021</p>
@@ -217,7 +217,7 @@
         <p>All other individuals are defined as "non-residents".</p>
         <p>
             If you are a California resident and would like to make such a request, please submit a verifiable consumer
-            request in writing to us using the <a href="{{ route('contact') }}">contact information.</a>. Only you as the
+            request in writing to us using the <a href="{{ route('contact') }}">contact information</a>. Only you as the
             person registered with the California Secretary of State can make such verifiable consumer request related to
             your personal information or someone you authorize to act on your behalf.
         </p>

@@ -68,7 +68,7 @@
             <h2>Get in touch</h2>
             <p>
                 Let us know how we can help you. If you are experiencing a technical problem, please inform us.
-                Looking for ways to partner with on your next project? Tell us more about what you need.
+             Tell us more about what you need.
             </p>
         </div>
     </div>

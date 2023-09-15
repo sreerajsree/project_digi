@@ -32,167 +32,109 @@
 @endsection
 
 @section('content')
-<div class="hero">
-    <p> <span style="color: yellow">D</span>iscover engaging content and stay informed.</p>
- </div>
-    <div id="categories">
-        <div class="category-post-container clear">
-            <div class="categories-post-grid">
-                <div class="category" id="category-nature">
-                    <div class="category-post-container root-category clear">
-                        <ul>
-                            <li class="bigger"
-                                style="background-image: url('{{ Storage::url($featured[0]->photo->path) }}')">
-                                <div class="post-meta">
-                                    <a class="square-link-cover" href="{{ route('post.show', [$featured[0]->slug]) }}"></a>
-                                    <div class="post-titles">
-                                        <h2 style="z-index: 1;">
-                                            <a href="{{ route('post.show', [$featured[0]->slug]) }}">{{ $featured[0]->title }}</a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </li>
-                            @for($i = 1; $i < 5; $i++)
-                            <li class=""
-                            style="background-image: url('{{ Storage::url($featured[$i]->photo->path) }}')">
-                            <div class="post-meta">
-                                <a class="square-link-cover" href="{{ route('post.show', [$featured[$i]->slug]) }}"></a>
-                                <div class="post-titles">
-                                    <h2 style="z-index: 1;">
-                                        <a href="{{ route('post.show', [$featured[$i]->slug]) }}">{{ $featured[$i]->title }}</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </li>
-                            @endfor
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Jumbotron section -->
-    {{-- <section class="jumbothron">
-    <div class="hero">
-       <p> <span style="color: yellow">D</span>iscover engaging content and stay informed.</p>
-    </div>
-    @if ($featured)
-    <div class="jumbothron-wrapper">
-        <div class="content">
-            <a href="{{ route('post.show', [$featured->slug]) }}" title="{{ $featured->title }}">
-                <h2>{{ $featured->title }}</h2>
-            </a>
-            <p>
-                {{ $featured->featured_excerpt }}{{ $featured->featured_three_dots }}
-            </p>
-            <a href="{{ route('post.show', [$featured->slug]) }}" class="button">
-                Read more
-            </a>            
-        </div>
-        @if ($featured->photo)
-        <div class="image-holder">
-            <a href="{{ route('post.show', [$featured->slug]) }}">
-                <img class="lazyload" 
-                    src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                    data-src="{{ Storage::url($featured->photo->path) }}" alt="{{ $featured->title }}">
-                <div class="image-overlay"></div>
-            </a>
-        </div>
-        @endif        
-    </div>
-    @endif
-</section> --}}
-    <!-- /.Jumbotron section -->
-
-    <!-- Posts section -->
-    <section class="news">
-        <h1>Latest Articles</h1>
-        <div class="news-container">
-            <div class="news-wrapper">
-                @forelse ($posts as $post_item)
-                    <div class="item">
-                        @if ($post_item->photo)
-                            <div class="image-holder">
-                                <a href="{{ route('post.show', [$post_item->slug]) }}">
-                                    <img class="lazyload"
-                                        src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                                        data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
-                                    <div class="image-overlay"></div>
-                                </a>
-                            </div>
-                        @endif
-                        <div class="category-container">
-                            <a href="{{ $post_item->category->slug }}" class="category">
-                                {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post_item->category->title) }}
-                            </a>
-                            <div class="item-content">
-                                <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
-                                    <h2>{{ $post_item->title }}</h2>
-                                </a>
-                            </div>
+    <div class="container nav-padding">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="{{ route('post.show', [$featured[0]->slug]) }}">
+                    <div class="relative">
+                        <img class="lazyload"
+                            src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                            data-src="{{ Storage::url($featured[0]->photo->path) }}" alt="{{ $featured[0]->title }}">
+                        <div class="absolute featured-main">
+                            <p class="category">{{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $featured[0]->category->title) }}
+                                / {{ $featured[0]->date }}</p>
+                            <p class="author">By {{ $featured[0]->user->name }}</p>
+                            <h3 class="title">{{ $featured[0]->title }}</h3>
                         </div>
                     </div>
+                </a>
+            </div>
+            <div class="col-md-6 res-padding">
+                <a href="{{ route('post.show', [$featured[1]->slug]) }}">
+                    <div class="relative">
+                        <img class="lazyload"
+                            src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                            data-src="{{ Storage::url($featured[1]->photo->path) }}" alt="{{ $featured[1]->title }}">
+                        <div class="absolute featured-main">
+                            <p class="category">{{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $featured[1]->category->title) }}
+                                / {{ $featured[1]->date }}</p>
+                            <p class="author">By {{ $featured[1]->user->name }}</p>
+                            <h3 class="title">{{ $featured[1]->title }}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            @for ($i = 2; $i < count($featured); $i++)
+                <div class="col-md-3">
+                    <div class="mt-4">
+                        <a href="{{ route('post.show', [$featured[$i]->slug]) }}">
+                            <img class="lazyload"
+                                src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                                data-src="{{ Storage::url($featured[$i]->photo->path) }}"
+                                alt="{{ $featured[$i]->title }}">
+                            <div class="post">
+                                <p class="category">
+                                    {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $featured[$i]->category->title) }} /
+                                    {{ $featured[$i]->date }}</p>
+                                <p class="author">By {{ $featured[$i]->user->name }}</p>
+                                <h3 class="title">{{ $featured[$i]->title }}</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endfor
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="mvp-widget-home-head">
+            <h4 class="mvp-widget-home-title"> <span class="mvp-widget-home-title">More News</span></h4>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                @forelse ($posts as $post_item)
+                    <a href="{{ route('post.show', [$post_item->slug]) }}">
+                        <div class="main-post">
+                            <img class="lazyload"
+                                src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                                data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
+                            <div class="content">
+                                <p class="category">
+                                    {{ preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post_item->category->title) }} /
+                                    {{ $post_item->date }}</p>
+                                <p class="author">By {{ $post_item->user->name }}</p>
+                                <h3 class="title">{{ $post_item->title }}</h3>
+                                <p class="subtitle">
+                                    {{ $post_item->excerpt }}{{ $post_item->three_dots }}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 @empty
                     <h3>Temporarily unavailable</h3>
                 @endforelse
+                <!-- Pagination section -->
+                <div class="news-pagination">
+                    <div class="news-pagination-wrapper">
+                        {{ $posts->links('vendor.pagination.default') }}
+                    </div>
+                </div>
+                <!-- /.Pagination section -->
             </div>
-            <div class="ads">&nbsp;
+            <div class="col-md-3">
+                <img class="lazyload pb-5"
+                    src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
+                    data-src="https://www.emaildrips.com/app/uploads/2021/01/Samsung-Google-Ad-example.png">
             </div>
         </div>
-    </section>
-    <!-- /.Posts section -->
-
-    <!-- Pagination section -->
-    <section class="news-pagination">
-        <div class="news-pagination-wrapper">
-            {{ $posts->links('vendor.pagination.default') }}
-        </div>
-    </section>
-    <!-- /.Pagination section -->
+    </div>
 
     <!-- Subscription livewire component widget -->
     <livewire:subscription />
     <!-- /.Subscription livewire component widget -->
 
-    <!-- Random posts slider -->
-    {{-- <section class="slider">
-    <h3>Read More</h3>
-    <div class="contact-slider">
-        <div class="contact-slider-wrapper">
-            @foreach ($random_posts as $post_item)
-            <div class="item">
-                @if ($post_item->photo)
-                <div class="image-holder">
-                    <a href="{{ route('post.show', [$post_item->slug]) }}">
-                        <img class="lazyload" 
-                            src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                            data-src="{{ Storage::url($post_item->photo->path) }}" alt="{{ $post_item->title }}">
-                        <div class="image-overlay"></div>
-                    </a>
-                </div>
-                @endif
-                <div class="item-content">
-                    <a href="{{ route('post.show', [$post_item->slug]) }}" title="{{ $post_item->title }}">
-                        <h2>{{ $post_item->title }}</h2>
-                    </a>
-                    <p class="item-blog-text">
-                        {{ $post_item->excerpt }}{{ $post_item->three_dots }}
-                    </p>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section> --}}
-    <!-- /.Random posts slider -->
+
 
 @endsection
-
-@push('scripts')
-    <!-- Scripts -->
-    {{-- <script src="{{ asset('js/slick.min.js') }}"></script>
-<script src="{{ asset('js/slick_users.js') }}"></script> --}}
-    <!-- /.Scripts -->
-@endpush

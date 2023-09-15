@@ -6,18 +6,17 @@
 
 @section('content')
 
-<!-- Title jumbotron -->
-<section class="title-jumbotron">
-    <div class="parallax-text">
-        <h1>Terms and conditions</h1>
+<div class="container pt-100">
+    <div class="mvp-widget-home-head">
+        <h4 class="mvp-widget-home-title"> <span class="mvp-widget-home-title">Terms and conditions</span></h4>
     </div>
-</section>
-<!-- /.Title jumbotron -->
+</div>
+
 
 <!-- Terms and conditions page -->
-<section class="legal">
+<section class="legal container">
     <div class="legal-wrapper">
-        <p class="italic">Last updated: August 31, 2021</p>
+        <p class="italic">Last updated: August 31, 2022</p>
         <h2>Introduction</h2>
         <p>
             These Terms and conditions ("terms") constitute a legally binding agreement made between you, whether personally

@@ -6,16 +6,13 @@
 
 @section('content')
 
-<!-- Title jumbotron -->
-<section class="title-jumbotron">
-    <div class="parallax-text">
-        <h1>Cookie policy</h1>
+<div class="container pt-100">
+    <div class="mvp-widget-home-head">
+        <h4 class="mvp-widget-home-title"> <span class="mvp-widget-home-title">cookie policy</span></h4>
     </div>
-</section>
-<!-- /.Title jumbotron -->
-
+</div>
 <!-- Cookie policy page -->
-<section class="legal">
+<section class="legal container">
     <div class="legal-wrapper">
         <h2>What is a cookie?</h2>
         <p>

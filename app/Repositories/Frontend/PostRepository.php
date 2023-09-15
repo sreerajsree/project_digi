@@ -26,7 +26,7 @@ class PostRepository implements PostRepositoryContract
         return Post::with(['photo'])
                 ->where('published', 1)
                 ->orderBy('publish_time', 'desc')
-                ->limit(5)
+                ->limit(6)
                 ->get();
     }
 
