@@ -174,7 +174,7 @@ ul {
     .consent {
         margin-top: 3rem;
         a.button {
-            border: 2px solid #f75679;
+            border: 2px solid #FFDE59;
             padding: 7px 16px;
             display: inline-block;
             font-size: 1.2rem;
@@ -185,9 +185,9 @@ ul {
             color: #000;
             cursor: pointer;
             &:hover {
-                background-color: #f75679;
+                background-color: #FFDE59;
                 color: #fff;
-                border: 2px solid #f75679;
+                border: 2px solid #FFDE59;
                 transition: all 0.3s ease-in-out;
             }
             &:not(:hover) {

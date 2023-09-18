@@ -90,16 +90,34 @@
                     <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
                     <li><a href="/">Home</a></li>
                     <li>
-                        <a href="#" class="desktop-item">News</a>
+                        <a href="#" class="desktop-item">Categories</a>
                         <input type="checkbox" id="showDrop">
-                        <label for="showDrop" class="mobile-item">News</label>
+                        <label for="showDrop" class="mobile-item">Categories</label>
                         <ul class="drop-menu">
                             <li>
                                 <a href="/news">News</a>
                             </li>
+                            <li>
+                                <a href="/trending">Trending</a>
+                            </li>
+                            <li>
+                                <a href="/artificial-intelligence">AI</a>
+                            </li>
+                            <li>
+                                <a href="/others">Others</a>
+                            </li>
+                            <li>
+                                <a href="/digital-marketing">Digital Marketing</a>
+                            </li>
+                            <li>
+                                <a href="/social-media">Social Media</a>
+                            </li>
+                            <li>
+                                <a href="/crypto-currency">Cryptocurrency</a>
+                            </li>
                         </ul>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" class="desktop-item">Categories</a>
                         <input type="checkbox" id="showMega">
                         <label for="showMega" class="mobile-item">Categories</label>
@@ -108,70 +126,57 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <ul class="mega-links">
-                                            <li>
-                                                <a href="/trending">Trending</a>
-                                            </li>
-                                            <li>
-                                                <a href="/artificial-intelligence">AI</a>
-                                            </li>
-                                            <li>
-                                                <a href="/others">Others</a>
-                                            </li>
+                                            
 
                                         </ul>
                                     </div>
                                     <div class="col-md-4">
                                         <ul class="mega-links">
-                                            <li>
-                                                <a href="/digital-marketing">Digital Marketing</a>
-                                            </li>
-                                            <li>
-                                                <a href="/social-media">Social Media</a>
-                                            </li>
+                                            
 
                                         </ul>
                                     </div>
                                     <div class="col-md-4">
                                         <ul class="mega-links">
-                                            <li>
-                                                <a href="/crypto-currency">Cryptocurrency</a>
-                                            </li>
+                                          
 
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
                     @guest
                         <li>
                             <a href="{{ route('login') }}">Sign in</a>
                         </li>
                     @endguest
                     @auth
-                        <li class="sub-menu">
-                            <a href="javascript:void(0)">{{ Auth::user()->name }}</a>
-                            <ul>
-                                <li>
-                                    <a href="{{ route('logout') }}" class="sub-item"
-                                        onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        <span>Logout</span>
-                                    </a>
-                                    <form action="{{ route('logout') }}" method="POST" id="logout-form"
-                                        style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
-                                @can('viewAny', \App\Models\Post::class)
-                                    <li>
-                                        <a href="/dashboard/posts" class="sub-item">
-                                            <span>Dashboard</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                            </ul>
-                        </li>
+                    <li>
+                        <a href="#" class="desktop-item">{{ Auth::user()->name }}</a>
+                        <input type="checkbox" id="showDrop">
+                        <label for="showDrop" class="mobile-item">{{ Auth::user()->name }}</label>
+                        <ul class="drop-menu">
+                            <li>
+                                <a href="{{ route('logout') }}" class="sub-item"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    <span>Logout</span>
+                                </a>
+                                <form action="{{ route('logout') }}" method="POST" id="logout-form"
+                                    style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                            @can('viewAny', \App\Models\Post::class)
+                            <li>
+                                <a href="/dashboard/posts" class="sub-item">
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                        @endcan
+                        </ul>
+                    </li>
                     @endauth
                     <li>
                         <a href="javascript:void(0)" id="search">
@@ -326,14 +331,14 @@
         <!-- /.Footer -->
     </div>
     <!-- /.App -->
- <!-- Search overlay -->
- <div class="search-overlay">
-    <span class="close-search">&times;</span>
-    <form action="{{ route('search.index') }}" method="GET" class="search-input" autocomplete="off">
-        @include('layouts.includes.fullscreen-search')
-    </form>
-</div>
-<!-- /.Search overlay -->
+    <!-- Search overlay -->
+    <div class="search-overlay">
+        <span class="close-search">&times;</span>
+        <form action="{{ route('search.index') }}" method="GET" class="search-input" autocomplete="off">
+            @include('layouts.includes.fullscreen-search')
+        </form>
+    </div>
+    <!-- /.Search overlay -->
     <!--Scripts -->
     <script>
         window.AuthUser = '{!! auth()->user() !!}'

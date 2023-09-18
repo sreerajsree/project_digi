@@ -64,9 +64,11 @@
                 <!-- /.Pagination section -->
             </div>
             <div class="col-md-3">
-                <img class="lazyload pb-5"
+                <a target="_blank" href="https://ameerah.nyc/products/buy-a-nycxi-momentum-rotational-women-watch">
+                    <img class="lazyload pb-5"
                     src="data:image/gif;base64,R0lGODlhAgABAIAAAP///wAAACH5BAEAAAEALAAAAAACAAEAAAICTAoAOw=="
-                    data-src="https://www.emaildrips.com/app/uploads/2021/01/Samsung-Google-Ad-example.png">
+                    data-src="/ad.png">
+                </a>
             </div>
         </div>
     </div>

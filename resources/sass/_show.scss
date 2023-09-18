@@ -20,7 +20,7 @@ span.mvp-post-cat {
     -ms-transform: skewX(-15deg);
     -o-transform: skewX(-15deg);
     transform: skewX(-15deg);
-    background-color: #ff005b;
+    background-color: #FFDE59;
 }
 
 .post-title {
@@ -45,6 +45,14 @@ span.mvp-post-cat {
 
 .post-body {
     margin-top: 30px;
+    a {
+        text-decoration: underline;
+        text-decoration-color: #FFDE59;
+        font-weight: bold;
+        &:hover {
+            color: #FFDE59;
+        }
+    }
 }
 
 .post-tags a .button {
