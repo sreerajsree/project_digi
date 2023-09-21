@@ -43,7 +43,7 @@
         <h3 class="mvp-post-cat left relative"> <a class="mvp-post-cat-link" href="{{ $post->category->slug }}"> <span
                     class="mvp-post-cat left">
                     {{ strtoupper(preg_replace('~[^\p{M}\p{L}]+~u', ' ', $post->category->title)) }} </span> </a></h3>
-        <h2 class="post-title">{{ $post->title }}</h2>
+        <p class="post-title">{{ $post->title }}</p>
         <div class="author-main">
             <p class="date">Updated on {{ $post->publish_date_time }}</p>
             <p class="name">By <a href="{{ $post->user->slug }}">{{ $post->user->name }}</a></p>
